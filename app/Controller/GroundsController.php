@@ -9,7 +9,7 @@ class GroundsController extends AppController {
 	var $priv = array (
 			'admin' => '*',
 			'gowner' =>array('index','select_list'),
-			'guest' => array('search','booking_layout','area_filter','area_filter_list','booking_price_for_ground') 
+			'guest' => array('search','booking_layout','area_filter','area_filter_list','booking_price_for_ground', 'short_distance_area', 'short_distance_area_list') 
 	);
 	public $components = array('Paginator');
 	public $adminLayouts = "*";
@@ -249,12 +249,40 @@ class GroundsController extends AppController {
 				'order' => array('locality ASC'),
 				'recursive' => 0
 		) );
+
 		$data = "";
 		$location_id = 0;
 		if(!empty($ground)){
 			foreach($ground as $g){
 				$jfunction = 'JavaScript:selectLocation("'.str_replace('/','_',str_replace(' ','_',strtolower($g['Ground']['locality']))).$location_id.'")';
 				$data .= "<li><a href='".$jfunction."' id='".str_replace('/','_',str_replace(' ','_',strtolower($g['Ground']['locality']))).$location_id."'>".$g['Ground']['locality']."</a></li>";
+				$location_id++;
+			}
+		}
+
+		print_r($data);
+		die();
+	}
+	public function short_distance_area($group_id, $latitude, $longitude) {
+		$ground = $this->Ground->getShortDistanceLocation($group_id, $latitude, $longitude);
+		$data = "";
+		if(!empty($ground)){
+			foreach($ground as $g){
+				$data .= "<option value='".$g['grounds']['locality']."'>".$g['grounds']['locality']."</option>";
+			}
+		}
+		print_r($data);
+		die();
+	}
+
+	public function short_distance_area_list($group_id, $latitude, $longitude) {
+		$ground = $this->Ground->getShortDistanceLocation($group_id, $latitude, $longitude);
+		$data = "";
+		$location_id = 0;
+		if(!empty($ground)){
+			foreach($ground as $g){
+				$jfunction = 'JavaScript:selectLocation("'.str_replace('/','_',str_replace(' ','_',strtolower($g['grounds']['locality']))).$location_id.'")';
+				$data .= "<li><a href='".$jfunction."' id='".str_replace('/','_',str_replace(' ','_',strtolower($g['grounds']['locality']))).$location_id."'>".$g['grounds']['locality']."</a></li>";
 				$location_id++;
 			}
 		}

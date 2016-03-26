@@ -26,9 +26,7 @@ class BookingsController extends AppController {
 	 * @return void
 	 */
 	public function index($id=null) {
-		if(trim($this->request->data("Search.proxy"))!="") {
-			$id = $this->request->data("Search.proxy"); 
-		}
+		
 		$this->layout = 'admin';
 		//Validation
 		//Id exist
@@ -39,6 +37,19 @@ class BookingsController extends AppController {
 					'action' => 'select_list'
 			) );
 		}
+
+		// search form submitted
+		if ($this->request->is('post')) {
+			if (!empty($this->request->data['Search']['created']) ||
+			    !empty($this->request->data['Search']['id']) || 
+				(!empty($this->request->data['Search']['from_date']) && 
+				!empty($this->request->data['Search']['to_date']))) {
+				$this->redirect('/bookings/index/'. $id .'/booking_created:' . $this->request->data['Search']['created'] . '/booking_id:' . $this->request->data['Search']['id'] . '/from_date:' . $this->request->data['Search']['from_date'] . '/to_date:' . $this->request->data['Search']['to_date']);
+			} else {
+				$this->redirect(array('controller' => 'bookings', 'action' => 'index', $id));
+			}
+		}
+
 		//Ground Exists
 		$this->loadModel('Ground');
 		if(!$this->Ground->exists($id)){
@@ -62,15 +73,41 @@ class BookingsController extends AppController {
 		
 		if($this->Ground->exists($id)){
 			$conditions = array('Booking.ground_id'=>$id);
-			if(trim($this->request->data("Search.id"))!="") {
-				$conditions['Booking.id'] = $this->request->data("Search.id");
+			if (!empty($this->request->named['booking_created'])) {
+				$conditions['Booking.created LIKE'] = '%'.$this->request->named['booking_created'].'%';
+				$this->request->data['Search']['created'] = $this->request->named['booking_created'];
 			}
-			if(trim($this->request->data("Search.created"))!="") {
-				$conditions['Booking.created LIKE'] = '%'.$this->request->data("Search.created").'%';
+			if (!empty($this->request->named['booking_id'])) {
+				$conditions['Booking.id'] = $this->request->named['booking_id'];
+				$this->request->data['Search']['id'] = $this->request->named['booking_id'];
 			}
-			$this->Booking->recursive = 1;
+			$this->Booking->virtualFields = ['Min_datetime' => 'SELECT MIN(datetime) FROM booked_slots as BookedSlot WHERE BookedSlot.booking_id = Booking.id'];
+
+			$this->Booking->recursive = -1;
+			$this->Booking->Behaviors->load('Containable');
 			$this->Paginator->settings['conditions'] = $conditions;
 			$this->Paginator->settings['order'] = array('id'=>'DESC');
+			if (!empty($this->request->named['from_date']) && !empty($this->request->named['to_date'])) {
+				$options = array(
+			        'date(BookedSlot.datetime) BETWEEN ? AND ?' => array(
+			        	$this->request->named['from_date'], 
+			        	$this->request->named['to_date']
+			        ) 
+				);
+				$this->request->data['Search']['from_date'] = $this->request->named['from_date'];
+				$this->request->data['Search']['to_date'] = $this->request->named['to_date'];
+			} else {
+				$options = array();
+			}
+			$this->Paginator->settings['contain'] = array(
+				'Ground', 
+				'User', 
+				'BookedSlot' => array(
+					'conditions' => $options
+				)
+			);
+			// pr($this->Paginator->paginate());
+			// exit;
 			$this->set ( 'bookings', $this->Paginator->paginate() );
 			$this->set ( 'ground', $this->Ground->find('first',array('conditions'=>array('Ground.id'=>$id))));
 		}

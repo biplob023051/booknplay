@@ -451,4 +451,23 @@ class Ground extends AppModel {
 			) );
 		return $data;
 	}
+
+	public function getShortDistanceLocation($group_id, $latitude, $longitude) {
+		$some_sql = "SELECT
+		  grounds.id, grounds.locality, (
+		    3959 * acos (
+		      cos ( radians($latitude) )
+		      * cos( radians( grounds.latitude ) )
+		      * cos( radians( grounds.longitude ) - radians($longitude) )
+		      + sin ( radians($latitude) )
+		      * sin( radians( grounds.latitude ) )
+		    )
+		  ) AS distance
+		FROM grounds
+		INNER JOIN types ON grounds.type_id = types.id and types.group_id = $group_id
+		HAVING distance < 1000000
+		ORDER BY distance";
+		$result = $this->query($some_sql);
+		return $result;
+	}
 }

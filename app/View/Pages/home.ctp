@@ -68,10 +68,40 @@
 	</div>
 	
 	<script>
+	var latitude, longitude;
 $(document).ready(function(){
 	updateLocation(7, 'badminton');
+	if (navigator.geolocation) {
+    	navigator.geolocation.getCurrentPosition(function(position) {  
+		  latitude = position.coords.latitude;
+		  longitude = position.coords.longitude;
+		  updateSortLocation(7, 'badminton');
+		});
+        //navigator.geolocation.getCurrentPosition(showLocation);
+    } else { 
+        alert('Geolocation is not supported by this browser.');
+    }
 	
 });
+
+function updateSortLocation(groupId, groupDivId) {
+	$('#GroundGroupId').val(groupId);
+	$('.sport').removeClass('active');
+	$('#'+groupDivId).addClass('active');
+	$('#desktop_ground_area').html('<li>Loading...</li>');
+	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"/"+latitude+"/"+longitude, function(data, status){
+		$('#desktop_ground_area').html(data);
+		selectLocation('ambattur0');
+	});
+	$('#GroundArea').html('<option>Loading...</option>');
+	$('#GroundArea').prop('disabled', 'disabled');
+	$.get(BASE_URL+"grounds/short_distance_area/"+groupId+"/"+latitude+"/"+longitude, function(data, status){
+		$('#GroundArea').html(data);
+		if(data != "")
+			$('#GroundArea').prop('disabled', false);
+	});
+	
+}
 
 $(function() {
 	var date = new Date();
@@ -93,23 +123,25 @@ $(function() {
 	});
 });
 function updateLocation(groupId, groupDivId) {
-	
-	$('#GroundGroupId').val(groupId);
-	$('.sport').removeClass('active');
-	$('#'+groupDivId).addClass('active');
-	$('#desktop_ground_area').html('<li>Loading...</li>');
-	$.get(BASE_URL+"grounds/area_filter_list/"+groupId, function(data, status){
-		$('#desktop_ground_area').html(data);
-		selectLocation('ambattur0');
-	});
-	$('#GroundArea').html('<option>Loading...</option>');
-	$('#GroundArea').prop('disabled', 'disabled');
-	$.get(BASE_URL+"grounds/area_filter/"+groupId, function(data, status){
-		$('#GroundArea').html(data);
-		if(data != "")
-			$('#GroundArea').prop('disabled', false);
-	});
-	
+	if (typeof latitude != 'undefined' && latitude != '') {
+	  updateSortLocation(groupId, groupDivId);
+	} else {
+		$('#GroundGroupId').val(groupId);
+		$('.sport').removeClass('active');
+		$('#'+groupDivId).addClass('active');
+		$('#desktop_ground_area').html('<li>Loading...</li>');
+		$.get(BASE_URL+"grounds/area_filter_list/"+groupId, function(data, status){
+			$('#desktop_ground_area').html(data);
+			selectLocation('ambattur0');
+		});
+		$('#GroundArea').html('<option>Loading...</option>');
+		$('#GroundArea').prop('disabled', 'disabled');
+		$.get(BASE_URL+"grounds/area_filter/"+groupId, function(data, status){
+			$('#GroundArea').html(data);
+			if(data != "")
+				$('#GroundArea').prop('disabled', false);
+		});
+	}
 }
 
 function selectLocation(locality) {
@@ -156,4 +188,7 @@ function searchPost(){
 
 
 </script>
-	
+
+
+<script>
+</script>

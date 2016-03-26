@@ -58,8 +58,8 @@ class DATABASE_CONFIG {
 			'datasource' => 'Database/Mysql',
 			'persistent' => false,
 			'host' => 'localhost',
-			'login' => 'booknplay',
-			'password' => 'booknplay@123',
+			'login' => 'root',
+			'password' => '',
 			'database' => 'booknplay_preproduction',
 			'prefix' => '' 
 	);

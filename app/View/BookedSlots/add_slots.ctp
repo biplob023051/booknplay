@@ -1,4 +1,6 @@
-<?php echo $this->EBHtml->script('/css/admin_style.css');?>
+<?php 
+	echo $this->EBHtml->css('/css/admin_style.css');
+?>
 <div class="span12 bookedSlots form">
 	<div class="row-fluid">
 		<div class="block">
