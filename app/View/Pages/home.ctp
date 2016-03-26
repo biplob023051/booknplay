@@ -56,6 +56,11 @@
 				</div>
 			<br/>
 			<?php echo $this->EBForm->input('date',array('type'=>'hidden','value'=>date('Y-m-d'))); ?>
+			<div stlye="display: none" id="all_areas">
+			</div>
+			<?php echo $this->EBForm->input('Visitor.latitude',array('type'=>'hidden','label'=>false)); ?>
+			<?php echo $this->EBForm->input('Visitor.longitude',array('type'=>'hidden','label'=>false)); ?>
+			<?php echo $this->EBForm->input('Visitor.url',array('type'=>'hidden','label'=>false)); ?>
 			<input type="submit" id="find-venues" value="Find Venues" />
 			</div>
 		</div>
@@ -75,6 +80,8 @@ $(document).ready(function(){
     	navigator.geolocation.getCurrentPosition(function(position) {  
 		  latitude = position.coords.latitude;
 		  longitude = position.coords.longitude;
+		  $("#VisitorLatitude").val(latitude);
+		  $("#VisitorLongitude").val(longitude);
 		  updateSortLocation(7, 'badminton');
 		});
         //navigator.geolocation.getCurrentPosition(showLocation);
@@ -91,7 +98,9 @@ function updateSortLocation(groupId, groupDivId) {
 	$('#desktop_ground_area').html('<li>Loading...</li>');
 	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"/"+latitude+"/"+longitude, function(data, status){
 		$('#desktop_ground_area').html(data);
-		selectLocation('ambattur0');
+		var selected_area = $('#desktop_ground_area li a').attr('id');
+		$('#all_areas').html(''); // empty hidden area input
+		selectLocation(selected_area);
 	});
 	$('#GroundArea').html('<option>Loading...</option>');
 	$('#GroundArea').prop('disabled', 'disabled');
@@ -132,6 +141,7 @@ function updateLocation(groupId, groupDivId) {
 		$('#desktop_ground_area').html('<li>Loading...</li>');
 		$.get(BASE_URL+"grounds/area_filter_list/"+groupId, function(data, status){
 			$('#desktop_ground_area').html(data);
+			$('#all_areas').html(''); // empty hidden area input
 			selectLocation('ambattur0');
 		});
 		$('#GroundArea').html('<option>Loading...</option>');
@@ -145,9 +155,36 @@ function updateLocation(groupId, groupDivId) {
 }
 
 function selectLocation(locality) {
-	$('#desktop_ground_area li a').removeClass('active');
-	$('#'+locality).addClass('active');
-	$("#GroundArea").val($('#'+locality).text());
+
+	if ($('#'+locality).hasClass('active')) {
+		$('#'+locality).removeClass('active');
+		$("#area_"+locality).remove();
+		$('#all_areas').append('<input type="hidden">'); // Dummy input
+		setUrlHiddenInput();
+	} else {
+		if ($('#desktop_ground_area .active').length <= 3) {
+			$('#'+locality).addClass('active');
+			$('#all_areas').append('<input type="hidden" value="'+$('#'+locality).text()+'" name="data[Ground][all_area]['+$('#all_areas').children().length+']" id="area_'+locality+'">');
+			setUrlHiddenInput();
+		} else {
+			alert('You can select maximum 4 ground area');
+		}
+	}
+}
+
+function setUrlHiddenInput() {
+	var all_areas_name = '';
+	$.each($("#all_areas input[type='hidden']"), function (index, value) {
+	    if ($(value).val() != '') {
+	    	if (all_areas_name == '') {
+	    		all_areas_name = $(value).val();
+	    	} else {
+	    		all_areas_name += '-'+$(value).val();
+	    	}
+	    }
+	});
+	console.log(all_areas_name);
+	$('#VisitorUrl').attr('value', all_areas_name);
 }
 
 function setSearchDate(flag) {
@@ -176,7 +213,7 @@ function loadArea(){
 function searchPost(){
 	var action_url = $("#contact-formm").attr("action");
 	var sport_type = $('#section1 div.center a.active').attr('id');
-	var location_search = $('#GroundArea').val();
+	var location_search = $('#VisitorUrl').val();
 	var location_search_res = location_search.replace("/", "_");
 	var location_search_res_spaace = location_search_res.replace(" ", "_");
 	var newParam = "/"+sport_type.toLowerCase()+"/"+location_search_res_spaace.toLowerCase();
@@ -187,8 +224,4 @@ function searchPost(){
 }
 
 
-</script>
-
-
-<script>
 </script>

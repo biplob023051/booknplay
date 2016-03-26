@@ -303,6 +303,9 @@ class BookingsController extends AppController {
 			{
 				$user = $this->User->find("first",array("conditions"=>array('User.id'=>$reqData['Booking']['user_id'],'User.role !='=>'admin'),'recursive'=>-1));
 				$this->set(compact('user'));
+			} elseif ($this->Auth->user()) {
+				$user['User'] = $this->Auth->user();
+				$this->set(compact('user'));
 			}
 			
 			//Process ground

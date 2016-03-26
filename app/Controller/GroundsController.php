@@ -167,7 +167,7 @@ class GroundsController extends AppController {
 				
 				$this->layout = "default";
 				$this->Ground->recursive = 0;
-				$conditions = array('Type.group_id'=>$req_gid,'Ground.locality'=>$reqData['Ground']['area'],'Ground.active'=>1);
+				$conditions = array('Type.group_id'=>$req_gid,'Ground.locality'=> !empty($reqData['Ground']['all_area']) ? $reqData['Ground']['all_area'] : $reqData['Ground']['area'],'Ground.active'=>1);
 				if($this->Auth->user('role') == 'gowner'){
 					$conditions['Ground.user_id'] = $this->Auth->user('id'); 
 				}
@@ -250,12 +250,21 @@ class GroundsController extends AppController {
 				'recursive' => 0
 		) );
 
+		$selected_areas = array();
+		if (!empty($this->request->query['data_url'])) {
+			$selected_areas = explode('-', $this->request->query['data_url']);
+		}
+
 		$data = "";
 		$location_id = 0;
 		if(!empty($ground)){
 			foreach($ground as $g){
 				$jfunction = 'JavaScript:selectLocation("'.str_replace('/','_',str_replace(' ','_',strtolower($g['Ground']['locality']))).$location_id.'")';
-				$data .= "<li><a href='".$jfunction."' id='".str_replace('/','_',str_replace(' ','_',strtolower($g['Ground']['locality']))).$location_id."'>".$g['Ground']['locality']."</a></li>";
+				if (in_array($g['Ground']['locality'], $selected_areas)) {
+					$data .= "<li><a class='active' href='".$jfunction."' id='".str_replace('/','_',str_replace(' ','_',strtolower($g['Ground']['locality']))).$location_id."'>".$g['Ground']['locality']."</a></li>";
+				} else {
+					$data .= "<li><a href='".$jfunction."' id='".str_replace('/','_',str_replace(' ','_',strtolower($g['Ground']['locality']))).$location_id."'>".$g['Ground']['locality']."</a></li>";
+				}
 				$location_id++;
 			}
 		}
@@ -276,6 +285,30 @@ class GroundsController extends AppController {
 	}
 
 	public function short_distance_area_list($group_id, $latitude, $longitude) {
+		$selected_areas = array();
+		if (!empty($this->request->query['data_url'])) {
+			$selected_areas = explode('-', $this->request->query['data_url']);
+		}
+		$ground = $this->Ground->getShortDistanceLocation($group_id, $latitude, $longitude);
+		$data = "";
+		$location_id = 0;
+		if(!empty($ground)){
+			foreach($ground as $g){
+				$jfunction = 'JavaScript:selectLocation("'.str_replace('/','_',str_replace(' ','_',strtolower($g['grounds']['locality']))).$location_id.'")';
+				if (in_array($g['grounds']['locality'], $selected_areas)) {
+					$data .= "<li><a class='active' href='".$jfunction."' id='".str_replace('/','_',str_replace(' ','_',strtolower($g['grounds']['locality']))).$location_id."'>".$g['grounds']['locality']."</a></li>";	
+				} else {
+					$data .= "<li><a href='".$jfunction."' id='".str_replace('/','_',str_replace(' ','_',strtolower($g['grounds']['locality']))).$location_id."'>".$g['grounds']['locality']."</a></li>";
+				}				
+				$location_id++;
+			}
+		}
+		print_r($data);
+		die();
+	}
+
+	// Common function for short distance location list
+	private function short_distance($group_id, $latitude, $longitude) {
 		$ground = $this->Ground->getShortDistanceLocation($group_id, $latitude, $longitude);
 		$data = "";
 		$location_id = 0;
@@ -286,8 +319,7 @@ class GroundsController extends AppController {
 				$location_id++;
 			}
 		}
-		print_r($data);
-		die();
+		return $data;
 	}
 	
 	public function booking_price_for_ground(){

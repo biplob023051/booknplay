@@ -12,6 +12,14 @@
 			<?php echo $this->EBForm->input('locality',array('type'=>'hidden','label'=>false,'div'=>false,'value'=>'chennai')); ?>
 			<?php echo $this->EBForm->input('group_id',array('type'=>'hidden','label'=>false,'div'=>false,'value'=>$reqData['Ground']['req_gid'])); ?>
 			<?php echo $this->EBForm->input('area',array('type'=>'hidden','label'=>false,'value'=>$reqData['Ground']['area'])); ?>
+			<?php echo $this->EBForm->input('Visitor.latitude',array('type'=>'hidden','label'=>false,'value'=>$reqData['Visitor']['latitude'])); ?>
+			<?php echo $this->EBForm->input('Visitor.longitude',array('type'=>'hidden','label'=>false,'value'=>$reqData['Visitor']['longitude'])); ?>
+			<?php echo $this->EBForm->input('Visitor.url',array('type'=>'hidden','label'=>false,'value'=>$reqData['Visitor']['url'])); ?>
+			<?php if (!empty($reqData['Ground']['all_area'])) : ?>
+				<?php foreach ($reqData['Ground']['all_area'] as $key => $value) : ?>
+					<input type="hidden" value="<?php echo $value; ?>" name="data[Ground][all_area][<?php echo $key; ?>]" id="area_<?php echo $value . $key; ?>">
+				<?php endforeach; ?>
+			<?php endif; ?>
 			<ul>
 							<li class="" style="text-align:left">Filters: </li>
 				<li>
@@ -30,37 +38,16 @@
 					</ul>
 				</li>
 				<li style="text-align:right;">
-					<a href="#" id="datepicker">
-						<img src="<?php echo $this->webroot;?>img/calender.png" >
+					
+						<?php
+							$prev_date = date('Y-m-d', strtotime($reqData['Ground']['date'] .' -1 day'));
+						?>
+						<?php if ($prev_date >= date('Y-m-d')) : ?>
+							<a href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date']) - (24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>"><b> &laquo;</b></a>
+						<?php endif; ?>
 						<span id="selected_date"> <?php echo date('l, d F', strtotime($reqData['Ground']['date']));?>
 						</span>
-					</a>
-					<ul class="sub_menu" style="right:0px; margin-left: 0;left: inherit;">
-						<?php if($reqData['Ground']['date'] == date('Y-m-d',time()+ (1*24*60*60))) { ?>
-							
-							<li><a href="JavaScript:setSearchDate('<?php echo date('l, d F',time());?>', '<?php echo date('Y-m-d', time());?>')" value="<?php echo date('l, d F', time());?>" id="date_<?php echo date('l, d F', time());?>"><?php echo date('l, d F', time());?></a>
-							</li>									
-							
-							<?php for($datei=1;$datei <=4;$datei++) : ?>
-							<li><a href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date'])+ ($datei*24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date'])+ ($datei*24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?>"><?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?></a>
-							</li>									
-						<?php 	endfor; 
-							} else if($reqData['Ground']['date'] == date('Y-m-d',time()+ (2*24*60*60))) { ?>
-								<li><a href="JavaScript:setSearchDate('<?php echo date('l, d F',time());?>', '<?php echo date('Y-m-d', time());?>')" value="<?php echo date('l, d F', time());?>" id="date_<?php echo date('l, d F', time());?>"><?php echo date('l, d F', time());?></a>
-								</li>
-								<li><a href="JavaScript:setSearchDate('<?php echo date('l, d F',time()+ (1*24*60*60));?>', '<?php echo date('Y-m-d', time()+ (1*24*60*60));?>')" value="<?php echo date('l, d F', time()+ (1*24*60*60));?>" id="date_<?php echo date('l, d F', time()+ (1*24*60*60));?>"><?php echo date('l, d F', time()+ (1*24*60*60));?></a>
-								</li>								
-							<?php for($datei=1;$datei <=3;$datei++) : ?>
-							<li><a href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date'])+ ($datei*24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date'])+ ($datei*24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?>"><?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?></a>
-							</li>	
-						<?php 	endfor; } 
-						else {
-							for($datei=1;$datei <=5;$datei++) : ?>
-							<li><a href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date'])+ ($datei*24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date'])+ ($datei*24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?>"><?php echo date('l, d F', strtotime($reqData['Ground']['date']) + ($datei*24*60*60));?></a>
-							</li>
-						<?php endfor; }?>			
-						
-					</ul>
+						<a href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date'])+ (24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>"><b> &raquo;</b></a>
 				</li>
 			</ul>
 			<?php echo $this->EBForm->input('date',array('type'=>'hidden','label'=>false,'div'=>false,'value'=>$reqData['Ground']['date'])); ?>
@@ -69,7 +56,7 @@
 		</div>
 		<div class="wrap">
 			<div class="center">
-			
+
 				<?php foreach($grounds as $ground) : ?>
 				<div class="booking_list detail-box">
 				<div class="container_12">
@@ -137,9 +124,18 @@
 		</div>
 		
 		<script>
+var latitude = '', longitude = '';
+var data_url = '<?php echo $reqData["Visitor"]["url"]; ?>';
+<?php if (!empty($reqData['Visitor']['latitude']) && !empty($reqData['Visitor']['longitude'])) : ?>
+	latitude = <?php echo $reqData['Visitor']['latitude']; ?>;
+	longitude = <?php echo $reqData['Visitor']['longitude']; ?>;
+<?php endif; ?>
 $(document).ready(function(){
-	updateLocation('<?php echo $reqData['Ground']['req_gid'];?>', '<?php echo $reqData['Ground']['group_id'];?>');
-	
+	if ((latitude != '') && (longitude != '')) {
+		updateSortLocation('<?php echo $reqData['Ground']['req_gid'];?>', '<?php echo $reqData['Ground']['group_id'];?>');
+	} else {
+		updateLocation('<?php echo $reqData['Ground']['req_gid'];?>', '<?php echo $reqData['Ground']['group_id'];?>');
+	}
 });
 
 $(function() {
@@ -150,20 +146,33 @@ $(function() {
 		$('#date_shortcut_today').removeClass('active');
 	});
 });
-function updateLocation(groupId, groupDivId) {
-	
-	$('#selected_sports').text($('#sports_'+groupId).text());
+
+function updateSortLocation(groupId, groupDivId) {
 	$('#GroundGroupId').val(groupId);
 	$('#desktop_ground_area').html('<li>Loading...</li>');
-	$.get(BASE_URL+"grounds/area_filter_list/"+groupId, function(data, status){
+	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"/"+latitude+"/"+longitude, {data_url: data_url}, function(data, status){
 		$('#desktop_ground_area').html(data);
-		//selectLocation('ambattur0');
 	});
+}
+
+function updateLocation(groupId, groupDivId) {
+	$('#selected_sports').text($('#sports_'+groupId).text());
+	if ((latitude != '') && (longitude != '')) {
+		updateSortLocation(groupId, groupDivId);
+	} else {
+		$('#GroundGroupId').val(groupId);
+		$('#desktop_ground_area').html('<li>Loading...</li>');
+		$.get(BASE_URL+"grounds/area_filter_list/"+groupId, {data_url: data_url}, function(data, status){
+			$('#desktop_ground_area').html(data);
+			//selectLocation('ambattur0');
+		});
+	}
 }
 
 function selectLocation(locality) {
 	$("#GroundArea").val($('#'+locality).text());
 	$("#selected_location").text($('#'+locality).text());
+	$('#VisitorUrl').val($('#'+locality).text());
 	$("#search_ground_form").submit();
 }
 
@@ -178,7 +187,7 @@ function searchPost(){
 	var action_url = $("#search_ground_form").attr("action");
 	var sport_type = $('#selected_sports').text();
 	var sport_type = sport_type.replace(" ", "_");
-	var location_search = $('#GroundArea').val();
+	var location_search = $('#VisitorUrl').val();
 	var location_search_res = location_search.replace("/", "_");
 	var location_search_res_spaace = location_search_res.replace(" ", "_");
 	var newParam = "/"+sport_type.toLowerCase()+"/"+location_search_res_spaace.toLowerCase();
@@ -203,3 +212,10 @@ function searchPost(){
 		});
 	});
 </script>
+
+<style type="text/css">
+	.price_detail ul li ul li a.active {
+	    color: #ffffff !important;
+	    background: #33629a;
+	}
+</style>

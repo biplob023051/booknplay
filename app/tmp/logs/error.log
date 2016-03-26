@@ -974,3 +974,857 @@ Request URL: /adminpanel/stylesheets/images/ui-bg_inset-hard_100_f5f8f9_1x100.pn
 Stack Trace:
 #0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-03-26 16:02:13 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 16:04:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 16:04:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 16:05:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 17:40:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 17:40:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 17:52:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 17:52:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 17:53:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:07:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(290): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 D:\www\booknplay\app\Controller\GroundsController.php(283): GroundsController->short_distance('7', 'undefined', 'undefined')
+#9 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#10 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#12 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#13 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-03-26 18:07:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:07:47 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:07:48 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(290): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 D:\www\booknplay\app\Controller\GroundsController.php(283): GroundsController->short_distance('7', 'undefined', 'undefined')
+#9 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#10 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#12 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#13 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-03-26 18:09:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:09:07 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(290): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 D:\www\booknplay\app\Controller\GroundsController.php(283): GroundsController->short_distance('7', 'undefined', 'undefined')
+#9 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#10 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#12 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#13 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-03-26 18:09:27 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:09:30 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(290): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 D:\www\booknplay\app\Controller\GroundsController.php(283): GroundsController->short_distance('7', 'undefined', 'undefined')
+#9 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#10 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#12 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#13 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-03-26 18:09:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:10:00 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(290): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 D:\www\booknplay\app\Controller\GroundsController.php(283): GroundsController->short_distance('7', 'undefined', 'undefined')
+#9 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#10 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#12 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#13 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-03-26 18:10:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:10:28 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(290): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 D:\www\booknplay\app\Controller\GroundsController.php(283): GroundsController->short_distance('7', 'undefined', 'undefined')
+#9 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#10 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#12 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#13 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-03-26 18:11:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:11:18 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(290): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 D:\www\booknplay\app\Controller\GroundsController.php(283): GroundsController->short_distance('7', 'undefined', 'undefined')
+#9 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#10 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#12 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#13 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2016-03-26 18:11:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:14:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:14:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:14:55 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:15:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:16:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:18:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:18:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:19:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:20:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:21:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:24:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:25:38 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:30:58 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list'
+Request URL: /grounds/short_distance_area_list/7/undefined/undefined?data_url=Mathur+MMDA-Villivakkam-Anna+Nagar-Ramapuram
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(497): PDOStatement->execute(Array)
+#1 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(457): DboSource->_execute('SELECT\n\t\t  grou...', Array)
+#2 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(719): DboSource->execute('SELECT\n\t\t  grou...', Array, Array)
+#3 D:\www\booknplay\lib\Cake\Model\Datasource\DboSource.php(580): DboSource->fetchAll('SELECT\n\t\t  grou...')
+#4 [internal function]: DboSource->query('SELECT\n\t\t  grou...')
+#5 D:\www\booknplay\lib\Cake\Model\Model.php(3459): call_user_func_array(Array, Array)
+#6 D:\www\booknplay\app\Model\Ground.php(470): Model->query('SELECT\n\t\t  grou...')
+#7 D:\www\booknplay\app\Controller\GroundsController.php(293): Ground->getShortDistanceLocation('7', 'undefined', 'undefined')
+#8 [internal function]: GroundsController->short_distance_area_list('7', 'undefined', 'undefined')
+#9 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(GroundsController), Array)
+#10 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#11 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(GroundsController), Object(CakeRequest), Object(CakeResponse))
+#12 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2016-03-26 18:31:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 18:32:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:12:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:12:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:19:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:25:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:34:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:57:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:57:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 20:59:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:00:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:00:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:03:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:04:27 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:04:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:15:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:18:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:18:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:19:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:19:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:19:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:21:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:27:02 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:28:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:28:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:34:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:37:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:38:36 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:39:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:39:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:40:02 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:40:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:40:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:40:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:40:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:40:21 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:42:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:43:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:43:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:43:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:44:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:44:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:45:46 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:46:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:46:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:46:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:46:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:46:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:46:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-03-26 21:46:59 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
