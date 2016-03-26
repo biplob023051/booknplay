@@ -1,0 +1,131 @@
+/** initial setup **/
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  display: none;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  display: block;
+}
+.nano > .nano-pane {
+  background : rgba(0,0,0,.25);
+  position   : absolute;
+  width      : 10px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 5px;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position              : relative;
+  margin                : 0 1px;
+  -moz-border-radius    : 3px;
+  -webkit-border-radius : 3px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
+
+
+#main .nano {
+  text-shadow: #eee 0 1px;
+}
+
+#main pre {
+  background: #222;
+  border-bottom: 1px solid white;
+  border-top: 1px solid black;
+  -webkit-box-shadow: black 0 1px 10px inset;
+  -moz-box-shadow: black 0 1px 10px inset;
+  box-shadow: black 0 1px 10px inset;
+  text-shadow: black 0 -1px 1px;
+}
+
+#main ul, #main ol {
+  display: block;
+ /* margin: 10px 0;}
+
+#main ul li, #main ol li {
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+#main .nano-content h1 {
+ display: block;
+  margin: 0;
+  padding: 0;
+  color: #111;
+  text-indent: 0;
+  background: none;
+  display: none;
+}
+
+#main a {
+  color: #066;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+#main a:hover {
+  text-decoration: underline;
+}
+
+#main code {
+  font-family: 'Monaco', 'Anonymous Pro', sans-serif;
+}*/
+
+#main p code {
+  background: #222;
+  display: inline-block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Monaco, 'Anonymous Pro';
+  font-size: 11px;
+  text-shadow: none;
+  color: #ee8;
+  padding: 0 3px 0;
+  border-bottom: 1px solid #eee;
+  -webkit-box-shadow: #000 0 2px 3px inset;
+  -moz-box-shadow: #000 0 2px 3px inset;
+  box-shadow: #000 0 2px 3px inset;
+  text-shadow: black 0 -1px 1px;
+}
+
+.small.nano {
+  background: #ffa;
+  height: 100px;
+  margin-top: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+

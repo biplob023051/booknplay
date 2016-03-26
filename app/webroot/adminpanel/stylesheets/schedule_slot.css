@@ -1,0 +1,118 @@
+.schedule_slot_ui .labeld{
+	display: inline-block !important;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-weight: 300;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #221D1D;
+	width: 300px;
+}
+.schedule_slot_ui{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-top:20px;
+}
+.schedule_slot_ui label{
+	display: inline !important;
+} 
+.schedule_slot_ui input[type="checkbox"] {
+	display: none;
+}
+
+.schedule_slot_ui input[type="checkbox"]+label span {
+	display: inline-block;
+	width: 26px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	border-bottom: double #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	cursor: pointer;
+	text-align:center;
+}
+
+.schedule_slot_ui input[type="checkbox"]:checked+label span {
+	background-color: #04B404;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.schedule_slot_ui input[type="checkbox"]:disabled+label span {
+	background-color: #ccc;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+span.single_slot{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	border-bottom: double #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	cursor: cursor;
+	text-align:center;
+}
+span.ss_enable{
+	background-color: #04B404;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+/* this is for price*/
+
+.schedule_price_ui .labeld{
+	display: inline-block !important;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-weight: 300;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #221D1D;
+	width: 300px;
+}
+.schedule_price_ui{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-top:20px;
+}
+.schedule_slot_ui label{
+	display: inline !important;
+} 
+
+
+.schedule_price_ui input[type="number"] {
+	display: inline-block;
+	width: 38px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	border-bottom: double #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+	text-align:center;
+}

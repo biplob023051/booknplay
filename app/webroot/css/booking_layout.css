@@ -1,0 +1,187 @@
+/****************Booking List*****************/
+.booking_list {
+	
+}
+
+.booking_list p {
+	color: #999;
+	font-size: 12px;
+	margin-bottom: 1px !important;
+}
+
+.booking_list .bl_tip {
+	color:red;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.booking_list .bl_fare {
+	
+}
+
+.booking_layout {
+	border: 3px solid #ccc;
+	min-height: 300px;
+	width: 84%;
+	padding: 1px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+}
+
+.frontend_booking .booking_layout {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+.booking_layout .bl_slot_selection {
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin: 20px 0px 20px 20px;
+	padding: 14px;
+	max-height: 330px;
+}
+
+.booking_layout .bl_slot_selection .row {
+	margin-top: 10px;
+	padding-bottom: 4px;
+	padding-left: 6px;
+	border-bottom: 1px #dfdfdf dotted;
+	width: auto;
+}
+.booking_layout .bl_slot_selection .row:last-child{
+	border-bottom: none;
+}
+/* Time axis */
+.booking_layout .bl_slot_selection .row_time {
+	padding-bottom: 4px;
+	padding-left: 6px;
+	width: auto;
+}
+
+.booking_layout .row_time span {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	font-size: 10px;
+	line-height: 15px;
+	text-align:center;
+}
+/* Time Axis */
+.booking_layout .row input[type="checkbox"] {
+	display: none;
+}
+
+.booking_layout .row input[type="checkbox"]+label span {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	border-bottom: double #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.booking_layout .row input[type="checkbox"]:checked+label span {
+	background-color: #04B404;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.booking_layout .row input[type="checkbox"]:disabled+label span {
+	background-color: #ccc;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.booking_layout .bl_timedisplay {
+	font-size: 12px;
+	min-width: 60px;
+	margin-right: 10px;
+}
+
+.booking_list .bl_inner_info p, .bl_fare p {
+	color: #373a3f !important;
+}
+
+.booking_list .bl_inner_info p strong {
+	padding-left: 3px;
+	color: #999 !important;
+}
+
+.booking_list .bl_inner_info1 {
+	margin-right: 25px;
+}
+
+.booking_layout .bl_symbol_note .bl_available {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	border-bottom: double #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.booking_layout .bl_symbol_note p {
+	padding-bottom: 5px;
+}
+
+.booking_layout .bl_symbol_note .bl_selected {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+	background-color: #04B404;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.booking_layout .bl_symbol_note .bl_booked {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: -1px 5px 0 0;
+	vertical-align: middle;
+	background-color: #ccc;
+	border: 1px solid #bbb;
+	border-bottom: double #ccc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.booking_layout .bl_timedisplay {
+	font-weight: bold;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.dlabel{
+	
+}
+/****************Booking List*****************/

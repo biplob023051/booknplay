@@ -1,0 +1,29 @@
+.navbar, .btn, .menu, .admin_footer {
+	display: none;
+}
+
+meta, script {
+	display: none;
+}
+
+.print {
+	display: block;
+}
+
+.noprint {
+	display: none;
+}
+
+.printleft {
+	float: left;
+}
+
+.printright {
+	float: right;
+	width: 250px;
+}
+
+.printOrder {
+	font-size: 10px !important;
+	color: #000;
+}

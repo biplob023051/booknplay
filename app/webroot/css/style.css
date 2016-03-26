@@ -1,0 +1,754 @@
+/* reset.css */
+html {margin:0;padding:0;border:0;}
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
+body {line-height:1.5;background:white;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+table, th, td {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:'';}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+:focus {outline:0;}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 14px;
+	color: #18304c;
+	background: #FAFAFA;
+}
+
+a { color: #18304c; text-decoration: none; }
+a:hover { color: #4A90E2; }
+
+.wrap {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+#main .wrap{min-height:350px;}
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
+.center { text-align: center; }
+
+#header {
+	background: #FFF;
+	border-bottom: 3px solid #4A90E2;
+/*	padding: 20px 0 10px 0;*/
+}
+
+h1 {
+	font-size: 28px;
+	font-weight: 300;
+	background: #fff7d2;
+	display: inline-block;
+}
+/*
+#body {
+	padding: 40px 0;
+}*/
+
+#section1 {
+	width: 330px;
+	display: inline-block;
+	vertical-align: top;
+}
+#section2 {
+	width: 310px;
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 50px;
+}
+#section3 {
+	width: 250px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left:60px;
+}
+#section1 > .head, #section2 > .head, #section3 > .head {
+	font-size: 18px;
+	margin-bottom: 24px;
+}
+
+.sport {
+	width: 98px;
+	height: 98px;
+	margin: 8px 2px;
+	display: inline-block;
+	padding-top: 12px;
+	padding-bottom: 2px;
+	border-radius: 4px;
+  border: 1px solid transparent;
+	text-decoration: none;
+	color: #18304c;
+  font-weight: 300;
+}
+
+.sport:hover {
+  color: #18304c;
+	background-color: #F1F1F1;
+}
+.sport:active, .sport.active {
+  color: #FFF;
+  background: #4A90E2;
+  border: 1px solid #326299;
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sport-icon-container {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto;
+  /*background: red;*/
+}
+.sport-name {
+  margin-top: 6px;
+}
+.mobile { display: none; }
+
+.sport-icon {
+  margin: 0 auto;
+  background-image: url(../img/icons_sprite.svg); 
+}
+
+#badminton > .sport-icon-container >  .sport-icon {
+  width: 50px;
+  height: 51px; 
+  background-position: -127px -4px;
+}
+#badminton.active > .sport-icon-container >  .sport-icon {
+  background-position: -127px -64px;
+}
+
+#cricket_nets > .sport-icon-container >  .sport-icon {
+  width: 35px;
+  height: 52px; 
+  background-position: -74px -4px;
+}
+#cricket_nets.active > .sport-icon-container >  .sport-icon {
+  background-position: -74px -64px;
+}
+
+#football > .sport-icon-container >  .sport-icon {
+  width: 43px;
+  height: 43px; 
+  background-position: -308px -8px;
+}
+#football.active > .sport-icon-container >  .sport-icon {
+  background-position: -308px -68px;
+}
+
+#tennis > .sport-icon-container >  .sport-icon {
+  width: 52px ;
+  height: 52px; 
+  background-position: -6px -4px;
+}
+#tennis.active > .sport-icon-container >  .sport-icon {
+  background-position: -6px -64px;
+}
+
+#table_tennis > .sport-icon-container {
+  padding-top: 6px;
+}
+#table_tennis > .sport-icon-container >  .sport-icon {
+  width: 46px ;
+  height: 44px;
+  background-position: -189px -8px;
+}
+#table_tennis.active > .sport-icon-container >  .sport-icon {
+  background-position: -189px -68px;
+}
+
+#snooker > .sport-icon-container {
+  padding-top: 6px;
+}
+#snooker > .sport-icon-container >  .sport-icon {
+  width: 43px ;
+  height: 43px;
+  background-position: -250px -8px;
+}
+#snooker.active > .sport-icon-container >  .sport-icon {
+  background-position: -250px -68px;
+}
+.list {
+	width: 260px;
+	max-height: 376px;
+	border-left: 1px solid #4A90E2;
+	border-right: 1px solid #4A90E2;
+	overflow:auto;
+  font-weight: 500;
+}
+.list > li > a {
+	border-bottom: 1px solid #e3e3e3;
+	height: 50px;
+	padding: 12px 0 10px 10px;
+	text-decoration: none;
+	color: #18304c;
+	display: block;
+}
+.list > li > a:hover {
+  background: #EDEDED;
+}
+.list > li > a:active,  .list > li > a.active {
+  color: #FFF;
+  background: #4A90E2 url(../img/tick.svg) no-repeat 230px;
+  border: 1px solid #326299;
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* TABLE */
+.cal {
+  display: block;
+  width:100%;/* 216px;*/
+}
+.cal a {
+  text-decoration: none;
+}
+.cal caption {
+  display: block;
+  line-height: 32px;
+  text-align: center;
+  border-top: 1px solid #4A90E2;
+}
+.cal caption a {
+  color: #DDD;
+  display: block;
+  line-height: 32px;
+  padding: 0 10px;
+  font-size: 18px;
+}
+.cal caption a:hover {
+  color: #4A90E2;
+}
+.cal caption .prev {
+  float: left;
+}
+.cal caption .next {
+  float: right;
+}
+.cal th, .cal td {
+  width: 30px;
+  text-align: center;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.8);
+  padding:0 3px;
+}
+.cal th:first-child, .cal td:first-child {
+  border-left: 0;
+}
+.cal th {
+  line-height: 20px;
+  font-size: 8px;
+  color: #696969;
+  text-transform: uppercase;
+  background: #F4F4F4;
+}
+.cal td {
+  /*font-size: 11px;*/
+}
+.cal td a {
+  clear: both;
+  display: block;
+  position: relative;
+  width: 30px;
+  line-height: 28px;
+  color: #18304c;
+  border-radius: 3px;
+}
+.cal td a:hover {
+  background: #EDEDED;
+}
+.cal td.off a {
+  color: #b3b3b3;
+}
+.cal td.today a {
+  margin: -1px;
+  background: #EDEDED;
+}
+.cal td.active a, .cal td a:active {
+  margin: -1px;
+  color: #FFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background: #4A90E2;
+  border: 1px solid #326299;
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.cal td.active:first-child a, .cal td:first-child a:active {
+  border-left: 0;
+  margin-left: 0;
+}
+.cal td.active:last-child a, .cal td:last-child a:active {
+  border-right: 0;
+  margin-right: 0;
+}
+.cal tr:last-child td.active a, .cal tr:last-child td a:active {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.date-shortcut {
+	width: 123px;
+	display: inline-block;
+	text-align: center;
+	padding:11px 0;
+	margin: 0;
+  color: #18304c;
+  text-decoration: none;
+  font-size: 12px;
+}
+/*.date-shortcut:first-of-type {
+	width: 120px;
+	border-right: 1px solid #4A90E2;
+}*/
+.date-shortcut > .date {
+	font-size: 11px;
+	font-weight: 500;
+}
+.date-shortcut:hover {
+  background: #EDEDED;
+}
+.date-shortcut:active, .date-shortcut.active {
+  color: #FFF;
+  background: #4A90E2;
+  border: 1px solid #326299;
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+#find-venues {
+  cursor: pointer;
+  border: 0;
+  width: 237px;
+  height: 67px;
+  color: #FFF;
+  background: url(../img/findvenues.svg) no-repeat 0px 7px;
+  font-size: 18px;
+  font-weight: 900;
+  text-align: left;
+  line-height: 0%;
+  padding-left: 40px;
+}
+
+
+
+#body {
+  min-height: 100%;
+  margin-bottom: 24px; 
+}
+#body:after {
+  content: "";
+  display: block;
+}
+
+#body:after {
+  height: 24px; 
+}
+#footer {
+  font-size: 11px;
+  color: #999;
+  padding: 6px;
+}
+
+.container_12 center{text-align:left;}
+.container_12 h5,
+.container_12 h6 {text-align: left; font-weight: bold;}
+
+
+/*new css start here by Saran
+=====================================================================================*/
+ul{margin: 0; list-style: none;}
+.top_header{padding:2px 0; background:#fafafa; border-bottom: 1px solid #f2f2f2;
+float: left; width:100%; font-size: 11px;}
+.main_header{padding:20px 0 10px 0;}
+.top_header span.left{position: relative;}
+#call_us,
+#sub_dropdown{cursor:pointer; background: url(../img/down-arrow.png) 144px center no-repeat;
+padding-right: 16px;}
+.cities_call,
+.dropdown-box{background: #ffffff; padding:14px; position: absolute; margin-top:14px; 
+border: 1px solid #cccccc; box-shadow:2px 2px 2px rgba(0, 0, 0, 0.4); width: 220px;}
+.cities_call li{cursor: pointer; font-size: 14px; border-bottom: 1px solid #cccccc;
+padding-bottom: 4px; margin-bottom: 4px;}
+.cities_call li:last-child{border-bottom: 0px; margin-bottom: 0px; padding-bottom: 0px;}
+.arrow_box:after, .arrow_box:before {bottom: 100%; left: 80%; border: solid transparent;
+  content: " "; height: 0; width: 0; position: absolute; pointer-events: none;}
+.arrow_box:after {border-color: rgba(136, 183, 213, 0); border-bottom-color: #ffffff;
+  border-width: 13px; margin-left: -13px;}
+.arrow_box:before {border-color: rgba(245, 56, 107, 0); border-bottom-color: #cccccc;
+  border-width: 14px; margin-left: -14px;}
+.offer-image{position: absolute; background: url(../img/offer-img.png) no-repeat;
+width:200px; height: 111px; right: -42px; text-align: center; font-size: 13px;top:100%}
+.offer-image span{margin-top: 20px; display: inline-block;}
+.offer-image span b{color: #4990e2;}
+span.close_offer{background: url(../img/close-offer.png) right top no-repeat; width: 8px;
+height: 9px; right: 14px; position: absolute; top: 20px; margin: 0px; cursor: pointer;}
+.login_detail{position: relative;}
+span.league a{color:#4990e2; padding:0 4px 2px 4px; margin:0 4px; font-size:16px;}
+span.league a:hover,
+span.league a.active{font-weight: bold; border-bottom:2px solid #f5a046;}
+.heading{margin-bottom: 40px;}
+.heading h1{color:#4990e2;font-weight: 400; padding:2px 8px 8px 8px; line-height: 20px;}
+.section{margin-top: 50px ;}
+.placeholder{border-top:1px solid #e6e6e6; margin:40px auto 30px auto; padding-top: 20px;}
+.placeholder .box{width:300px; height:120px; background:#4990e2; display: inline-block;}
+.placeholder .box.box2{margin: 0 26px;}
+#footer{background:#f2f2f2; float: left; width: 100%;}
+#footer ul{float: left; width: 100%; padding:20px 0;}
+#footer ul li{ float:left; margin:0 20px; width:16%;}
+#footer ul li:first-child{margin-left:0;}
+#footer ul li:last-child{margin-right:0;}
+#footer ul li{ float:left; margin:0 15px; width:14%; line-height:22px;}
+#footer ul li a{float: left; width: 100%; text-align: left;}
+.footer_bottom{float: left; width: 100%; text-align: center; font-size: 11px;padding:20px 0;}
+.footer_bottom span{margin-bottom:16px; display: inline-block;}
+.footer_bottom p{font-size:10px;}
+
+
+/*price css start here
+==========================================================================*/
+.main_header .login_detail a{color:#4A90E2;}
+#header.hide_header{border-bottom: 0px;}
+#price-outer.section{margin-top: 0px;}
+.price_detail{background:#4990e2; height: 48px; border: 1px;margin-top: -3px;}
+.price_detail li{color:#ffffff; width: 25%; text-align: center; line-height: 48px;
+display: inline-block; float: left;}
+.price_detail li img{vertical-align: middle; padding-right: 10px;}
+.price_detail a{color: #ffffff; background:url(../img/FilterImag.png) right center no-repeat;
+padding-right: 20px;}
+
+
+.price_detail ul li{position: relative;}
+
+.price_detail ul li ul { transition:all 0.2s; -webkit-transition:all 0.2s; opacity: 0; position: absolute; list-style-type: none; padding: 0; margin: 0; z-index: 1; width: 192px; text-align: left; border-top: 5px solid #ffffff; top:27px; margin-top: 20px; visibility:hidden;width:230px;overflow:auto !important;}
+.price_detail ul li:hover > ul { opacity: 1; visibility: visible;left: 50%; margin-left: -115px; /*left:30%;*/ }
+.price_detail ul li:hover > ul li ul { left: 100%; top: -70px; margin-top: 0px;   border-left: 5px solid #76A541; border-top: 0px;}
+.price_detail ul li:hover > ul li ul:after { display: none;}
+.price_detail ul li:hover > ul li:hover ul { left: 100%; top: 0px;}
+.price_detail ul li ul li {height: auto; line-height: 30px; background: #4990e2; width: 100%;text-align: left; margin: 0px; padding: 0px; border-bottom: 1px solid #d8d8d8;}
+.price_detail ul li ul li:last-child{border-bottom: 0px;}
+.price_detail ul li ul li a{color: #ffffff; display: block; padding:10px 9px 10px 20px; line-height: 20px;
+background:#4990e2;}
+.price_detail ul li ul li a:hover{color: #ffffff !important; background: #33629a;}
+.price_detail ul li ul:after{ transition:all 0.2s; -webkit-transition:all 0.2s; content: ""; position: absolute; left: 150px; top: -22px; border-width: 8px;  border-style: solid; border-color: transparent;   -moz-transform: scale(.9999); border-bottom: 12px solid #ffffff}
+.price_detail ul li:hover ul:after{content: "";  right:55px; }
+.detail-box{background:#ffffff; box-shadow: 0 0 3px rgba(0,0,0,0.2); padding: 20px;
+margin-top:20px;}
+
+.detail-box .left{width: 82%; color:#000000; font-size:13px; text-align: left;}
+.detail-box strong{color:#4990e2; font-size: 16px;}
+.detail-box .right strong{color: #000000;}
+.top-section i{font-size: 11px; color:#cccccc; display: block; margin:4px 0 6px 0;}
+.detail-box .right{width:18%; text-align:right; font-size:20px; font-weight: normal;}
+
+.chart{border-top:  1px solid #e5e5e5; margin-top: 20px; padding:20px 40px;
+display: none;}
+.chart table{font-size:13px; float: left;}
+.chart table td{border-radius: 3px; background:#ffffff; border:1px solid #d8d8d8;
+min-width:70px; height:30px; line-height:30px; text-align: center; margin-right:10px;
+display:inline-block; margin-bottom: 10px;}
+.chart table td.timily{border: 0px; padding:0px 0 0 0; text-align: right; min-width:90px;}
+.chart table td.timily img{vertical-align: middle; margin-right:4px;}
+.border{background: #c1c1c1; height: 1px; width: 150px; float: right;}
+.courts{font-size: 12px; margin-bottom: 30px;}
+.courts i{color: #b3b3b3;}
+.courts select{background: #ffffff; border: 1px solid #d8d8d8; border-radius: 2px; width:46px;
+height: 30px; text-align: center; margin: 0 20px;}
+.charges li{line-height:40px;}
+.charges{color: #000000; font-size: 12px; text-align: right; float:right;}
+.charges span{width:150px;display: inline-block;}
+.charges strong{text-align: left;font-size: 12px; color: #000000; float: right; width: 50px;
+    margin-left: 20px;}
+.charges span strong{width: 100%; margin-left: 0px; text-align: right;}
+.chart table td.available{background:#ffffff; border: 1px solid #d8d8d8; font-size: 11px;}
+.chart table td.unavailable{background:rgba(216, 216, 216, 0.74); border: 1px solid rgba(175, 175, 175, 0.69); font-size: 11px;}
+.chart table td.select,
+.select{background:#4990e2; border: 1px solid #33629a; font-size: 11px; color: #ffffff;}
+.chart table td.select a{color: #ffffff;}
+.chart table td.margin{border: 0px; border-radius: 0px; margin: 0;}
+a.continue,
+a.slot-btn,button.slot-btn,button.continue,.book_in_bl input[type="submit"],
+.form-element input[type="submit"]{ 
+background:#f59f48; border-radius:4px; color: #ffffff; border: 1px solid #db8f43;
+width: 140px; height: 40px; line-height: 36px; display: inline-block; text-align: center;
+font-size:15px; text-transform: capitalize; box-shadow:0 -2px 0 #db8f43 inset;
+}
+.offer-price{background: #f2f2f2; border: 1px solid #d8d8d8; padding: 10px; border-radius:4px;
+font-size: 12px; line-height: 20px; text-align: center; width: 145px; margin-right: 0px;
+float: right; margin-bottom:10px;}
+.offer-price strong{font-size: 12px; margin-left: 20px;}
+a.close_slot{background:url(../img/close-slot.png) center center no-repeat; width:40px; height:40px;
+display:block; float: right;}
+.happy_hours{background:url(../img/happy_hr-bg.jpg) left top repeat-x #f5f5f5; margin-top: 21px;
+float: left; width: 100%; margin-bottom: 20px; font-size: 11px; font-weight: 600; color:#18304c;
+padding:4px 0; display: none;}
+.inner-page{border-top: 2px solid #4990e2; padding-top: 30px;}
+.inner_content h2{color: #4990e2; font-size:24px; margin-bottom: 20px;}
+.inner_content p{text-align: left; line-height: 26px; margin-bottom: 20px;}
+.sign{width:400px; margin: 0 auto 40px auto; padding: 40px;
+background: #ffffff; box-shadow: 0 0 2px rgba(0,0,0,0.2);text-align: left;}
+.sign h3{margin-bottom:24px; font-size: 20px; font-weight: 300;}
+.form-element{margin-bottom:16px; float: left; width: 100%; font-size: 12px;font-weight: 600;}
+.form-element label{width:98%; float: left; padding-left: 2%; margin-bottom:2px;}
+.form-element input{width:98%; float: left; height: 32px; border: 1px solid #d9d9d9;
+border-radius: 2px; padding-left: 2%; background: #ffffff; font-size: 12px;}
+.form-element.submit{text-align: center; margin-bottom: 0px;}
+input[type="submit"]{float: none; cursor: pointer; transition:all ease 0.2s;
+-webkit-transition:all ease 0.2s; -o-transition:all ease 0.2s; -moz-transition:all ease 0.2s;
+min-width: 180px; line-height: 40px;}
+input[type="submit"]:hover{}
+.inner_content h3{color: #4990e2; font-size:19px; font-weight: 600;}
+.inner_content h3 i{font-size: 11px; color: #d8d8d8; text-align: left; display:block;}
+#payment-page{text-align: left; font-size: 13px;}
+#payment-page p{line-height:20px;}
+#payment-page span input,
+ul.select-slots li input{background:#ffffff; border:1px solid #d8d8d8; border-radius: 3px;
+width:36px; height: 30px; text-align: center; margin-left:5px;}
+.select-slots{margin-top: 20px; margin-left:27px; float: left; width: 100%;}
+.select-slots span{float:left; margin-right:6px; line-height:30px; float:left;}
+.select{float: left; min-width:70px; height:30px; line-height: 30px; text-align: center;
+border-radius: 4px; margin-right:10px;}
+.select-slots .select{margin-bottom:10px;}
+.select a{color: #ffffff;}
+.total_fare{margin-left:54px; margin-top: 20px; float: left; width: 100%;}
+.total_fare strong{font-size:18px;}
+
+#sub_dropdown{background-position: right center; text-align: right; position: relative;}
+.dropdown-box{/*box-shadow:none; width:120px; padding:12px; background:#f2f2f2; margin-top: 0;
+border: 0px; right: 0px;*/  width:160px; padding:20px; right:0px; z-index:1; font-size:14px;}
+.dropdown-box li a{color:#000000;}
+.listing-page{text-align: left;}
+.listing-page h3{font-size:20px; font-weight: 300;}
+.listing-page .detail-box .product{float: left; margin-right:40px;}
+.listing-page .detail-box .left{width:59%;}
+.listing-page #payment-page{width:41%;}
+.border-gray{margin-bottom:20px; padding-bottom:20px; border-bottom: 1px solid #cccccc;}
+.listing-page .detail-box strong{color:#000000; font-size: 18px; font-weight:500;}
+.listing-page .top-section{position: relative;}
+.cancel-product{font-size: 10px; background:#f2f2f2 url(../img/close.png) 10px center no-repeat;
+padding:4px 10px; position: absolute; right: 0px; top:-20px; width: 106px; text-align: right;}
+.cancel-product a{color:#9b9b9b;}
+ul.select-slots{margin-top: 0px; margin-left: 0px;}
+ul.select-slots li{width: 100%; float: left; line-height:30px; margin-bottom: 10px;}
+ul.select-slots li span{width:33%; float: left; text-align: right;}
+ul.select-slots li a{color:#ffffff;}
+.detail-box ul.select-slots li strong{font-weight: 600;}
+.product_detail{float: left;}
+#payment-page .left-block{width:56%;}
+.pricing{float: left;}
+.booking_detail td{cursor: pointer;}
+.booking_button{width: 100%;margin-top:15px}
+.slots_show{float:left; width:65%;}
+
+/* tournament page css start here
+==============================================================================*/
+
+#tournament_page .top-section > .left{width:400px;}
+#tournament_page .top-section > .right{width:500px;}
+#tournament_page .top-section > .right a img{width:500px; max-width:100%;margin-top: 100px;}
+
+
+
+/* tournament page css end here
+==============================================================================*/
+
+
+
+/*new css end here by Saran
+=====================================================================================*/
+
+
+@media (min-width:768px) and (max-width: 1023px){
+  .wrap{padding: 0 10px;}
+  .listing-page .detail-box .product{float: none; text-align: center; margin-right: 0px;}
+  .listing-page .detail-box .left{width: 50%;}
+  .listing-page #payment-page{width: 50%;}
+  .select{margin-right: 6px;}
+  #payment-page .left-block{width: 48%;}
+  .sign{width: 50%;}
+  .chart{padding: 20px;}
+  .pricing{width: 67%;}
+  .charges{width: 33%;}
+  .chart table td{margin-right: 8px;}
+  #section1{width:28%;}
+  #section2{width: 33%;
+    padding-left: 8px;}
+  .list{width: 240px;}
+  #section3 {width:250px;margin-left:8px;}
+  #tournament_page .top-section > .left{width:40%;}
+  #tournament_page .top-section > .right{width:60%;}
+
+}
+
+
+@media screen and (max-width:767px) {
+  #body {padding: 0px;}
+  .wrap {width: 100%; padding: 0 10px;}
+  h1 {display: none;}
+  #section1, #section2, #section3 {width: 100%; margin: 0; padding: 0; margin-bottom: 20px;}
+  #section1 > .head, #section2 > .head, #section3 > .head {font-size: 18px; font-weight: 300;
+  margin-bottom: 0px;}
+  .sport {width: 18%;}
+  .sport-name { font-size: 11px; }
+  .desktop { display: none; }
+  .mobile { display: inline;}
+  #section2 {padding: 0;}
+  #section3 {text-align: center;}
+  .cal {margin: 0 auto;}
+  #footer ul li{width:100%; margin: 0 0 30px 0;}
+  #footer ul li:last-child{margin-bottom: 0px;}
+  .placeholder .box,
+  .placeholder .box.box2{margin: 0 auto 20px 0; text-align: center; float: none;}
+  .main_header{text-align: center}
+  .main_header .left,
+  .main_header .right{float: none;}
+  .wrap.placeholder{text-align: center; padding-top:20px;}
+  .sign h3{margin-bottom: 10px;}
+  .listing-page .detail-box .left,
+  .listing-page #payment-page{width:100%; margin-top: 20px;}
+  .listing-page .detail-box .product{float: none; margin: 0 auto 20px auto; text-align: center;}
+  .product a{padding: 10px; margin: 0 auto; display: inline-block;border:1px solid #F1F1F1;
+    border-radius: 2px;}
+  .detail-box .left,
+  .detail-box .right{width: 100%; float: left; text-align: left;}
+  .detail-box .right{border-top: 1px solid #cccccc; margin-top: 20px; padding-top: 20px;}
+  .chart{padding:20px 0px;}
+  .chart table td{min-width: 68px; margin-right: 5px;}
+  .pricing{clear: both; width: 100%;}
+  .charges{text-align: left; float: left; clear: both;}
+  #payment-page .left-block{width: 100%;}
+  #payment-page .sign{width: 100%; margin-top: 20px;}
+  #find-venues:hover{
+  /*box-shadow: none;*/
+  }
+  #section3{text-align: center; width: 264px; margin: 0 auto; display: block;}
+  .offer-image{right:0px;}
+  #section2 .mobile{font-size:16px !important; padding:4px 0;}
+  #tournament_page .top-section > .left{width:100%;}
+  #tournament_page .top-section > .right{width:100%;}
+  #tournament_page .top-section > .right a img{margin-top:30px;}
+}
+
+
+@media screen and (max-width:667px){
+  .price_detail li{line-height: 20px;}
+  .chart table td.timily{width: 100%; text-align: center;}
+  .booking_button{border-top: 1px solid #ccc; padding-top: 20px; margin-top: 20px;}
+  .price_detail ul ul.sub_menu,
+  .price_detail ul li:hover > ul{left: 0px; position: absolute;}
+  .price_detail ul li ul{width: 140px;}
+  .price_detail ul li:hover ul:after{right: 95px;}
+  .price_detail ul li ul:after{left: 30px;}
+  .price_detail ul li{font-size: 11px; line-height: 48px;}
+  .price_detail li img{display: none;}
+  .price_detail a{padding-right: 13px;}
+}
+
+@media screen and (max-width: 480px){
+  .sign{padding:10%; width:90%; }
+  ul.select-slots{font-size: 12px;}
+  ul.select-slots li span{width:38%;}
+  .slots_show{width:60%;}
+  li a.select{min-width: 51px; height: 30px; margin-right: 4px;}
+  .detail-box{padding:10px;}
+}
+
+@media screen and (max-width: 400px) {
+  span.league a{margin:0 4px}
+  .sport{width: 31%;}
+  .login_detail{font-size:10px;}  
+
+}
+
+.caption {
+  display: block;
+  text-align: center;
+  border-top: 1px solid #4A90E2;
+}
+
+.ajax_bl_parent
+{
+	display:none;
+}
+
+.im-checkout, .im-checkout-btn { 
+background:#f59f48 !important; border-radius:4px !important; color: #ffffff !important; border: 1px solid #db8f43 !important;
+width: 140px !important; height: 40px !important; line-height: 36px !important; display: inline-block !important; text-align: center !important;
+font-size:15px !important; text-transform: capitalize !important; box-shadow:0 -2px 0 #db8f43 inset !important;
+padding: 0 !important; font-weight: bold !important;
+}
+.im-powered-link { display: none !important; }
+
+/*table */
+
+.table {
+	width: 100%;
+}
+
+.table th {
+	font-size: 14px;
+	font-weight: normal;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align: center;
+	padding: 17px 12px;
+	border-right: none;
+	color: #fff;
+	background-color: #0dbff2;
+}
+
+.table tr th:first-child, .table tr td:first-child {
+	border-left-style: solid;
+	border-left-width: 0;
+}
+
+.table tbody td {
+	padding: 14px 7px;
+	text-align: center;
+	border-right: none;
+	border-color: #fff;
+}
+
+.table tbody tr {
+	background-color: #f8f8f8;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+
+.table tbody tr {
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+
+.table tbody tr:nth-child(even) {
+	background: #fdfdfd;
+}
+
+.table tbody tr:nth-child(odd) {
+	background: #f8f8f8;
+}
+
+.table tbody tr:hover {
+	background: #e8e8e8;
+}
+
+.table tfoot td {
+	color: #fff;
+	background: #0dbff2;
+	font-size: 11px;
+	padding: 10px 16px;
+}
