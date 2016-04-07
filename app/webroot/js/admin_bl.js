@@ -4,7 +4,7 @@ function bl_init(){
 	$('#base_price').text('-');
 	$('#service_charge').text('-');
 	$('#total_price').text('-');
-	$('#selected_slots').text('');
+	$('#selected_slots').text('-');
 	
 	//Setting no of court feature
 	$('#no_of_court').change(function(){
@@ -18,37 +18,61 @@ function bl_init(){
 	       return;
 	 });
 	$('.single_slot').click(function(){
-		var value = $(this).val();
-		var temp = new Date();
-		
-		//Setting Hours
-		var hr = value.slice(-2)-1;
-		value = value.slice(0,-2);
-		
-		//Setting Day
-		value = value.slice(1);
-		
-		temp.setTime(temp.getTime() +  ((value-1) * 24 * 60 * 60 * 1000));
-		temp.setHours(hr);
-		temp.setMinutes(0);
-		temp.setSeconds(0);
-		var date = new Date(temp.getTime());
-		
-		//Unselect slots
-		if(!$(this).prop('checked')){
-			$('.label'+$(this).val()).remove();
-			num--;
-		}
-		else{
+		var value = $(this).attr('value');
+		var slot_value = value;
+		var availClass = $(this).attr('class');
+		console.log(availClass);
+		if($(this).hasClass('available')){
+			$(this).addClass('select');
+			$(this).removeClass('available');
+			var temp = new Date();
+			console.log(value);
+			//Setting Hours
+			var hr = value.slice(-2)-1;
+			value = value.slice(0,-2);
+			
+			//Setting Day
+			value = value.slice(1);
+			
+			temp.setTime(temp.getTime() +  ((value-1) * 24 * 60 * 60 * 1000));
+			temp.setHours(hr);
+			temp.setMinutes(0);
+			temp.setSeconds(0);
+			var date = new Date(temp.getTime());
 			num++;
 			//Selected Slot
-			if($('#selected_slots').text() == '')
-				$('#selected_slots').append('<span class="dlabel label'+$(this).val()+'">'+date.getDate()+'-'+(month[date.getMonth()])+'-'+date.getFullYear()+' '+formatAMPM((date.getHours()))+'('+$('#no_of_court').val()+')'+'</span>');
-			else
-				$('#selected_slots').append('<span class="dlabel label'+$(this).val()+'">, '+date.getDate()+'-'+(month[date.getMonth()])+'-'+date.getFullYear()+' '+formatAMPM((date.getHours()))+'('+$('#no_of_court').val()+')'+'</span>');
-		}
-		var no_of_court = $('#no_of_court').val();
-		update_price((num*no_of_court));
+			//if($('#selected_slots').text() == '')
+				//$('#selected_slots').append('<span class="dlabel label'+$(this).val()+'">'+date.getDate()+'-'+(month[date.getMonth()])+'-'+date.getFullYear()+' '+formatAMPM((date.getHours()))+'('+$('#no_of_court').val()+')'+'</span>');
+				if($('#selected_slots').text() == '-') {
+					$('#selected_slots').text(1);
+				} else if($('#selected_slots').text() != '') {
+					var currentValue = parseInt($("#selected_slots").text(),10);
+					console.log(currentValue);
+					currentValue++;
+					$('#selected_slots').text(currentValue);
+				} 
+				$('<input>').attr({
+					type: 'hidden',
+					name: 'data[slots]['+slot_value+']',
+					value: slot_value,
+					class: 'slot_value_box'
+				}).appendTo($(this).closest('#BookingPaymentForm'));
+			} else if($(this).hasClass('select')){
+				$( "input[value='"+slot_value+"']" ).remove();
+				var currentValue = parseInt($("#selected_slots").text(),10);
+				if(currentValue > 0) {
+					currentValue = (currentValue - 1);
+					$('#selected_slots').text(currentValue);
+				}
+				//Unselect slots
+				$(this).addClass('available');
+				$(this).removeClass('select');
+				num--;
+			}
+			console.log('numsmmsm : '+num);
+			var no_of_court = $('#no_of_court').val();
+			var current_ground_id =$(this).closest('form').find('input[name="data[Booking][ground_id]"]').val();
+			update_price(num*no_of_court, current_ground_id);
 	});
 	function update_price(no){
 		if (typeof(no)==='undefined') no = 0;

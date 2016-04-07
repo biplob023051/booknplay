@@ -155,7 +155,19 @@ class GroundsController extends AppController {
 		if ($this->request->is ( 'post' )){
 			if($this->request->data['Ground']['date'] >= date('Y-m-d',time()) && $this->request->data['Ground']['date'] <= date('Y-m-d',time()+ (13*24*60*60))) {
 				//Setting Variable
+				
+				if (!empty($this->request->data['Ground']['all_area'])) {
+					array_filter($this->request->data['Ground']['all_area']);
+					$this->request->data['Ground']['all_area'] = array_values($this->request->data['Ground']['all_area']);
+				}
+				
+				if (!empty($this->request->data['Ground']['all_area']) && (count($this->request->data['Ground']['all_area']) == 1)) {
+					$this->request->data['Ground']['area'] = $this->request->data['Ground']['all_area'][0];
+					unset($this->request->data['Ground']['all_area']);
+				}
 				$reqData = $this->request->data;
+				// pr($reqData);
+				// exit;
 				unset($this->request->data);
 				$this->loadModel('Group');
 				$groups = $this->Group->find ( 'list' );
@@ -272,7 +284,9 @@ class GroundsController extends AppController {
 		print_r($data);
 		die();
 	}
-	public function short_distance_area($group_id, $latitude, $longitude) {
+	public function short_distance_area($group_id) {
+		$latitude = $this->request->query['lat'];
+		$longitude = $this->request->query['long'];
 		$ground = $this->Ground->getShortDistanceLocation($group_id, $latitude, $longitude);
 		$data = "";
 		if(!empty($ground)){
@@ -284,7 +298,9 @@ class GroundsController extends AppController {
 		die();
 	}
 
-	public function short_distance_area_list($group_id, $latitude, $longitude) {
+	public function short_distance_area_list($group_id) {
+		$latitude = $this->request->query['lat'];
+		$longitude = $this->request->query['long'];
 		$selected_areas = array();
 		if (!empty($this->request->query['data_url'])) {
 			$selected_areas = explode('-', $this->request->query['data_url']);

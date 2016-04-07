@@ -96,7 +96,7 @@ function updateSortLocation(groupId, groupDivId) {
 	$('.sport').removeClass('active');
 	$('#'+groupDivId).addClass('active');
 	$('#desktop_ground_area').html('<li>Loading...</li>');
-	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"/"+latitude+"/"+longitude, function(data, status){
+	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"?lat="+latitude+"&long="+longitude, function(data, status){
 		$('#desktop_ground_area').html(data);
 		var selected_area = $('#desktop_ground_area li a').attr('id');
 		$('#all_areas').html(''); // empty hidden area input
@@ -104,7 +104,7 @@ function updateSortLocation(groupId, groupDivId) {
 	});
 	$('#GroundArea').html('<option>Loading...</option>');
 	$('#GroundArea').prop('disabled', 'disabled');
-	$.get(BASE_URL+"grounds/short_distance_area/"+groupId+"/"+latitude+"/"+longitude, function(data, status){
+	$.get(BASE_URL+"grounds/short_distance_area/"+groupId+"?lat="+latitude+"&long="+longitude, function(data, status){
 		$('#GroundArea').html(data);
 		if(data != "")
 			$('#GroundArea').prop('disabled', false);

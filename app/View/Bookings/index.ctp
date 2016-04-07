@@ -46,34 +46,6 @@
 							<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($bookings as $booking): ?>
-	<?php if (!empty($this->request->data['Search']['from_date']) && !empty($this->request->data['Search']['from_date'])) : ?>
-		<?php if (!empty($booking['BookedSlot'])) : ?>
-			<tr>
-				<td><?php echo h($booking['User']['email']); ?>&nbsp;</td>
-				<td><?php echo h($booking['User']['phone']); ?>&nbsp;</td>
-				<td><?php echo h($booking['Booking']['id']); ?>&nbsp;</td>
-				<td><?php echo h($booking['Booking']['status']); ?>&nbsp;</td>
-				<td><?php echo h($booking['Booking']['payment_method']); ?>&nbsp;</td>
-				<td><?php echo h($booking['Booking']['initiator']); ?>&nbsp;</td>
-				<td><?php echo h($booking['Booking']['created']); ?>&nbsp;</td>
-				<td><?php echo h($booking['Booking']['amount']); ?>&nbsp;</td>
-				<td><?php 
-				if(!empty($booking['BookedSlot'])){
-					foreach($booking['BookedSlot'] as $k=>$datum){
-					if(count($booking['BookedSlot']) > ($k+1))
-						echo date('F j, g:i a',strtotime($datum['datetime'])).',';
-					else
-						echo date('F j, g:i a',strtotime($datum['datetime']));
-					}
-				} 
-				?>&nbsp;</td>
-				<td class="actions">
-					<?php echo ($booking['Booking']['status'] != 'CANCELLED')?$this->Form->postLink(__('Cancel'), array('action' => 'cancel', $booking['Booking']['id']), null, __('Are you sure you want to cancel this booking ?')):""; ?><br>
-					<?php echo ($booking['Booking']['status'] != 'SUCCESS' && $booking['Booking']['status'] != 'CANCELLED')?$this->Form->postLink(__('Mark as paid'), array('action' => 'mark_paid', $booking['Booking']['id']), null, __('Are you sure you want to mark this booking as paid?')):""; ?>
-				</td>
-			</tr>
-		<?php endif; ?>
-	<?php else : ?>
 		<tr>
 			<td><?php echo h($booking['User']['email']); ?>&nbsp;</td>
 			<td><?php echo h($booking['User']['phone']); ?>&nbsp;</td>
@@ -98,8 +70,7 @@
 				<?php echo ($booking['Booking']['status'] != 'SUCCESS' && $booking['Booking']['status'] != 'CANCELLED')?$this->Form->postLink(__('Mark as paid'), array('action' => 'mark_paid', $booking['Booking']['id']), null, __('Are you sure you want to mark this booking as paid?')):""; ?>
 			</td>
 		</tr>
-	<?php endif; ?>
-<?php endforeach; ?>
+	<?php endforeach; ?>
 	</table>
 	<div class="paging ebpaging">
 	<?php

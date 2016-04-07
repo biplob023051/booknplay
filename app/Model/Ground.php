@@ -465,6 +465,8 @@ class Ground extends AppModel {
 		  ) AS distance
 		FROM grounds
 		INNER JOIN types ON grounds.type_id = types.id and types.group_id = $group_id
+		WHERE grounds.active = 1
+		GROUP BY grounds.locality
 		HAVING distance < 1000000
 		ORDER BY distance";
 		$result = $this->query($some_sql);

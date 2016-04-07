@@ -16,9 +16,11 @@
 			<?php echo $this->EBForm->input('Visitor.longitude',array('type'=>'hidden','label'=>false,'value'=>$reqData['Visitor']['longitude'])); ?>
 			<?php echo $this->EBForm->input('Visitor.url',array('type'=>'hidden','label'=>false,'value'=>$reqData['Visitor']['url'])); ?>
 			<?php if (!empty($reqData['Ground']['all_area'])) : ?>
-				<?php foreach ($reqData['Ground']['all_area'] as $key => $value) : ?>
-					<input type="hidden" value="<?php echo $value; ?>" name="data[Ground][all_area][<?php echo $key; ?>]" id="area_<?php echo $value . $key; ?>">
-				<?php endforeach; ?>
+				<div id="all_area" style="display: none;">
+					<?php foreach ($reqData['Ground']['all_area'] as $key => $value) : ?>
+						<input type="hidden" value="<?php echo $value; ?>" name="data[Ground][all_area][<?php echo $key; ?>]" id="area_<?php echo $value . $key; ?>">
+					<?php endforeach; ?>
+				</div>
 			<?php endif; ?>
 			<ul>
 							<li class="" style="text-align:left">Filters: </li>
@@ -43,11 +45,12 @@
 							$prev_date = date('Y-m-d', strtotime($reqData['Ground']['date'] .' -1 day'));
 						?>
 						<?php if ($prev_date >= date('Y-m-d')) : ?>
-							<a href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date']) - (24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>"><b> &laquo;</b></a>
+							<a class="no-filter" href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date']) - (24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) - (24*60*60));?>"><b> &laquo;</b></a>
 						<?php endif; ?>
+						<img src="<?php echo $this->webroot;?>img/calender.png" >
 						<span id="selected_date"> <?php echo date('l, d F', strtotime($reqData['Ground']['date']));?>
 						</span>
-						<a href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date'])+ (24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>"><b> &raquo;</b></a>
+						<a class="no-filter" href="JavaScript:setSearchDate('<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>', '<?php echo date('Y-m-d', strtotime($reqData['Ground']['date'])+ (24*60*60));?>')" value="<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>" id="date_<?php echo date('l, d F', strtotime($reqData['Ground']['date']) + (24*60*60));?>"><b> &raquo;</b></a>
 				</li>
 			</ul>
 			<?php echo $this->EBForm->input('date',array('type'=>'hidden','label'=>false,'div'=>false,'value'=>$reqData['Ground']['date'])); ?>
@@ -150,7 +153,7 @@ $(function() {
 function updateSortLocation(groupId, groupDivId) {
 	$('#GroundGroupId').val(groupId);
 	$('#desktop_ground_area').html('<li>Loading...</li>');
-	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"/"+latitude+"/"+longitude, {data_url: data_url}, function(data, status){
+	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"?lat="+latitude+"&long="+longitude, {data_url: data_url}, function(data, status){
 		$('#desktop_ground_area').html(data);
 	});
 }
@@ -173,6 +176,7 @@ function selectLocation(locality) {
 	$("#GroundArea").val($('#'+locality).text());
 	$("#selected_location").text($('#'+locality).text());
 	$('#VisitorUrl').val($('#'+locality).text());
+	$('#all_area').html('');
 	$("#search_ground_form").submit();
 }
 

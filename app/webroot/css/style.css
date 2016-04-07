@@ -752,3 +752,9 @@ padding: 0 !important; font-weight: bold !important;
 	font-size: 11px;
 	padding: 10px 16px;
 }
+
+a.no-filter {
+  background: none;
+  padding-right: 2px;
+  font-size: 18px;
+}

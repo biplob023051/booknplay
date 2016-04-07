@@ -1,5 +1,5 @@
 <?php 
-	echo $this->EBHtml->css('/css/admin_style.css');
+	echo $this->EBHtml->css('/css/admin_chart.css');
 ?>
 <div class="span12 bookedSlots form">
 	<div class="row-fluid">
@@ -19,9 +19,9 @@
 						for($i=0;$i<14;$i++){
 							$datelist[date('Y-m-d',strtotime('+'.$i.' days'))] = date('jS M y',strtotime('+'.$i.' days'));
 						}
-                    	echo $this->EBForm->input('tempdate',array('label'=>'Date','id'=>'startDate','options'=>$datelist,'empty'=>'Select Date','class'=>'change_ground')); 
+                    	echo $this->EBForm->input('tempdate',array('label'=>'Date','id'=>'startDate','options'=>$datelist,'empty'=>'Select Date','class'=>'change_ground', 'div' => array('class' => 'input'))); 
                     	?>
-					<?php	echo $this->EBForm->input('ground_id',array('id'=>'just_ground','class'=>'change_ground'));?>
+					<?php	echo $this->EBForm->input('ground_id',array('id'=>'just_ground','class'=>'change_ground', 'div' => array('class' => 'input')));?>
 					</div>
 					<?php }else{?>					
 					<div class="row-fluid">
@@ -29,6 +29,7 @@
                     <div class="control-group">
                         <?php	echo $this->EBForm->hidden('ground_id',array('value'=>$gid));?>
                         <?php	echo $this->EBForm->hidden('user_id',array('value'=>$this->Session->read("Auth.User.id")));?>
+                        <?php	echo $this->EBForm->hidden('Ground.date',array('value'=> $start_date));?>
                         <!-- Booking Layout -->
                         <div id="ajax_bl">Loading...</div>
 					</div>

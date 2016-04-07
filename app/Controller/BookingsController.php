@@ -85,8 +85,8 @@ class BookingsController extends AppController {
 
 			$this->Booking->recursive = -1;
 			$this->Booking->Behaviors->load('Containable');
-			$this->Paginator->settings['conditions'] = $conditions;
-			$this->Paginator->settings['order'] = array('id'=>'DESC');
+			
+			$booking_ids = array();
 			if (!empty($this->request->named['from_date']) && !empty($this->request->named['to_date'])) {
 				$options = array(
 			        'date(BookedSlot.datetime) BETWEEN ? AND ?' => array(
@@ -94,17 +94,27 @@ class BookingsController extends AppController {
 			        	$this->request->named['to_date']
 			        ) 
 				);
+				$booking_ids = $this->Booking->BookedSlot->find('list', array(
+					'conditions' => $options,
+					'recursive' => -1,
+					'fields' => array('BookedSlot.booking_id', 'BookedSlot.booking_id')
+				));
+				
 				$this->request->data['Search']['from_date'] = $this->request->named['from_date'];
 				$this->request->data['Search']['to_date'] = $this->request->named['to_date'];
-			} else {
-				$options = array();
+			} 
+			
+			if (!empty($booking_ids)) {
+				$conditions['Booking.id'] = $booking_ids;
 			}
+
+			$this->Paginator->settings['conditions'] = $conditions;
+			$this->Paginator->settings['order'] = array('id'=>'DESC');
+
 			$this->Paginator->settings['contain'] = array(
 				'Ground', 
 				'User', 
-				'BookedSlot' => array(
-					'conditions' => $options
-				)
+				'BookedSlot'
 			);
 			// pr($this->Paginator->paginate());
 			// exit;
