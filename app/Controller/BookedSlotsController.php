@@ -108,8 +108,14 @@ class BookedSlotsController extends AppController {
 				$this->Session->delete('BookData');
 			}
 			
-			$saveData = array ();
-			$saveData ['Booking'] ['status'] = (isset($this->request->data['payment_method']) && ($this->request->data['payment_method'] == 'DIRECT'))?'PENDING':'INITIATED';
+			$saveData = array();
+			if (empty($this->request->data['request_payment'])) {
+				$saveData ['Booking'] ['status'] = (isset($this->request->data['payment_method']) && ($this->request->data['payment_method'] == 'DIRECT'))?'PENDING':'INITIATED';
+			} else{
+				$saveData ['Booking'] ['status'] = 'INITIATED';				
+			}
+			
+			
 			$saveData ['Booking'] ['payment_method'] = (isset($this->request->data['payment_method']) && ($this->request->data['payment_method'] == 'PAYU'))?'PAYU':'DIRECT';
 			$saveData ['Booking'] ['amount'] = 0;
 			$saveData ['Booking'] ['initiator'] = (isset($this->request->data ['BookedSlot'] ['initiator']))?$this->request->data ['BookedSlot'] ['initiator']:'ADMIN';
@@ -176,8 +182,12 @@ class BookedSlotsController extends AppController {
 				}
 			}
 			$total = $base;
-			$saveData ['Booking'] ['amount'] = $total;
-			
+
+			// changed_amount
+			if ($this->Auth->user() && !empty($this->request->data['request_payment'])) {
+				$saveData ['Booking'] ['amount'] = !empty($this->request->data['changed_amount']) ? $this->request->data['changed_amount'] : $total;
+			}			
+
 			$this->loadModel ( 'Booking' );
 			if ($this->Booking->saveAll ( $saveData )) {
 				
@@ -188,62 +198,98 @@ class BookedSlotsController extends AppController {
 					$cdata = $this->BookedSlot->Ground->find('first',array('conditions'=>array('Ground.id'=>$this->request->data ['BookedSlot'] ['ground_id'])));
 					//Send Sms notification for buyer
 					if(isset($this->request->data['User'])){
-						$msg = "Booking Id:".$this->Booking->id.
-								", Name:".$this->request->data['User']['display'].
-								", M:".$this->request->data['User']['phone'].
-								", Slots:".$slot_summary.
-								", Court:".$cdata['Ground']['name'].
-								", Address:".$cdata['Ground']['address_line_1'].', '.$cdata['Ground']['address_line_2'].', '.$cdata['Ground']['locality'].', '.$cdata['Ground']['city'].
-								", Map:".$cdata['Ground']['google_maps'];
-						$this->Sms->sendSms($this->request->data['User']['phone'],nl2br($msg));
-						
-						try{
-							//Mail Notification for buyer
-							$Email = new CakeEmail();
-							$Email->to(isset($this->request->data ['BookedSlot'] ['email'])?$this->request->data ['BookedSlot'] ['email']:'booknplay@gmail.com');
-							$Email->from(array('booknplay@gmail.com' => 'Book N Play!'));
-							$Email->subject('Booked successfully ! Booking Id:'.$this->Booking->id);
-							//$Email->send($msg);
-						} catch(Exception $ex) {
-							echo $ex->getMessage();
-							die();
+
+						if (!empty($this->request->data['request_payment'])) { // Request payment button clicked
+							
+							$payment_link = 'http://' . $_SERVER['SERVER_NAME'] . $this->base . '/payment_gateway/pg/forward/payu/'.$this->Booking->id . '/1';
+
+							$msg = "Your booking has been initiated with the following details " .
+									"Booking Id:".$this->Booking->id.
+									", Name:".$this->request->data['User']['display'].
+									", Phone:".$this->request->data['User']['phone'].
+									", Slots:".$slot_summary.
+									", Court:".$cdata['Ground']['name'].
+									". Please pay clicking on the following link to confirm your booking " . $payment_link .
+									". Please note that the link expires in 20 mins";
+							$this->Sms->sendSms($this->request->data['User']['phone'],nl2br($msg));
+							
+							try{
+								//Mail Notification for buyer
+								$Email = new CakeEmail();
+								$Email->to(isset($this->request->data['User']['email']) ? $this->request->data['User']['email'] : 'booknplay@gmail.com');
+								$Email->from(array('booknplay@gmail.com' => 'Book N Play!'));
+								$Email->subject('Payment Request from "'. $cdata['Ground']['name'] . '"');
+								$Email->send($msg);
+							} catch(Exception $ex) {
+								echo $ex->getMessage();
+								die();
+							}
+						} else { // Existing direct payment 
+							$msg = "Booking Id:".$this->Booking->id.
+									", Name:".$this->request->data['User']['display'].
+									", M:".$this->request->data['User']['phone'].
+									", Slots:".$slot_summary.
+									", Court:".$cdata['Ground']['name'].
+									", Address:".$cdata['Ground']['address_line_1'].', '.$cdata['Ground']['address_line_2'].', '.$cdata['Ground']['locality'].', '.$cdata['Ground']['city'].
+									", Map:".$cdata['Ground']['google_maps'];
+							$this->Sms->sendSms($this->request->data['User']['phone'],nl2br($msg));
+							
+							try{
+								//Mail Notification for buyer
+								$Email = new CakeEmail();
+								$Email->to(isset($this->request->data ['BookedSlot'] ['email'])?$this->request->data ['BookedSlot'] ['email']:'booknplay@gmail.com');
+								$Email->from(array('booknplay@gmail.com' => 'Book N Play!'));
+								$Email->subject('Booked successfully ! Booking Id:'.$this->Booking->id);
+								//$Email->send($msg);
+							} catch(Exception $ex) {
+								echo $ex->getMessage();
+								die();
+							}
 						}
+						
 					}
 					
 					//Send Sms notification for gowner
-					if(isset($cdata['User'])){
-						$msg = "Booking Id:".$this->Booking->id.
-						", Name:".$this->request->data['User']['display'].
-						", M:".$this->request->data['User']['phone'].
-						", Court:".$cdata['Ground']['name'].
-						", Slots:".$slot_summary;          
-                                                $numberArray = explode(',', $cdata['Ground']['phone']);
-                                                for ($i = 0; $i < count($numberArray); $i++) {
-                                                $this->Sms->sendSms($numberArray[$i],$msg);
-                                                }
+					if (empty($this->request->data['request_payment'])) {
+						if(isset($cdata['User'])){
+							$msg = "Booking Id:".$this->Booking->id.
+							", Name:".$this->request->data['User']['display'].
+							", M:".$this->request->data['User']['phone'].
+							", Court:".$cdata['Ground']['name'].
+							", Slots:".$slot_summary;          
+	                                                $numberArray = explode(',', $cdata['Ground']['phone']);
+	                                                for ($i = 0; $i < count($numberArray); $i++) {
+	                                                $this->Sms->sendSms($numberArray[$i],$msg);
+	                                                }
 
-						/*$this->Sms->sendSms($cdata['User']['phone'],$msg);
-                                                $numberArray = explode(',', $cdata['User']['phone']);
-                                                foreach($mobileNum as $numberArray {
-                                                  $this->Sms->sendSms($mobileNum,$msg);
-                                                }*/
-		
-					
-						try{
-							//Mail Notification for gowner
-							$Email = new CakeEmail();
-							$Email->to(isset($cdata['User']['email'])?$cdata['User']['email']:'booknplay@gmail.com');
-							$Email->from(array('booknplay@gmail.com' => 'Book N Play!'));
-							$Email->subject('Booked successfully ! Booking Id:'.$this->Booking->id);
-							$Email->send($msg);
-						} catch(Exception $ex) {
-							echo $ex->getMessage();
-							die();
+							/*$this->Sms->sendSms($cdata['User']['phone'],$msg);
+	                                                $numberArray = explode(',', $cdata['User']['phone']);
+	                                                foreach($mobileNum as $numberArray {
+	                                                  $this->Sms->sendSms($mobileNum,$msg);
+	                                                }*/
+			
+						
+							try{
+								//Mail Notification for gowner
+								$Email = new CakeEmail();
+								$Email->to(isset($cdata['User']['email'])?$cdata['User']['email']:'booknplay@gmail.com');
+								$Email->from(array('booknplay@gmail.com' => 'Book N Play!'));
+								$Email->subject('Booked successfully ! Booking Id:'.$this->Booking->id);
+								$Email->send($msg);
+							} catch(Exception $ex) {
+								echo $ex->getMessage();
+								die();
+							}
 						}
 					}
 					
 					$this->Session->setFlash ( __ ( 'Booking completed !' ) );
-					$this->redirect (array('controller'=>'bookings','action'=>'payment_status',1,$this->Booking->id));
+					if (empty($this->request->data['request_payment'])) {
+						$this->redirect (array('controller'=>'bookings','action'=>'payment_status',1,$this->Booking->id));
+					} else {
+						$this->redirect (array('controller'=>'bookings','action'=>'payment_status',2,$this->Booking->id));
+					}
+					
 				}
 			} else {
 				$this->Session->setFlash ( __ ( 'The booked slot could not be saved. Please, try again.' ) );

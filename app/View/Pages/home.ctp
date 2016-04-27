@@ -27,7 +27,11 @@
 			</div>
 			<div id="section2">
 				<div class="center head">2. LOCATION</div>
-
+				<div id="error-message" class="hide">
+					<div class="alert alert-danger">
+					    <a href="javascript:void(0)" class="close" title="close">×</a> You can select upto 4 locations
+					</div>
+				</div>
 				<ul class="list desktop" id="desktop_ground_area">
 					
 				</ul>
@@ -98,9 +102,12 @@ function updateSortLocation(groupId, groupDivId) {
 	$('#desktop_ground_area').html('<li>Loading...</li>');
 	$.get(BASE_URL+"grounds/short_distance_area_list/"+groupId+"?lat="+latitude+"&long="+longitude, function(data, status){
 		$('#desktop_ground_area').html(data);
-		var selected_area = $('#desktop_ground_area li a').attr('id');
 		$('#all_areas').html(''); // empty hidden area input
-		selectLocation(selected_area);
+		$("#desktop_ground_area li").each(function(n) {
+			if (n < 4) {
+				selectLocation($(this).children().attr('id'));
+			}
+      	});
 	});
 	$('#GroundArea').html('<option>Loading...</option>');
 	$('#GroundArea').prop('disabled', 'disabled');
@@ -142,7 +149,11 @@ function updateLocation(groupId, groupDivId) {
 		$.get(BASE_URL+"grounds/area_filter_list/"+groupId, function(data, status){
 			$('#desktop_ground_area').html(data);
 			$('#all_areas').html(''); // empty hidden area input
-			selectLocation('ambattur0');
+			$("#desktop_ground_area li").each(function(n) {
+				if (n < 2) {
+					selectLocation($(this).children().attr('id'));
+				}
+	      	});
 		});
 		$('#GroundArea').html('<option>Loading...</option>');
 		$('#GroundArea').prop('disabled', 'disabled');
@@ -161,16 +172,22 @@ function selectLocation(locality) {
 		$("#area_"+locality).remove();
 		$('#all_areas').append('<input type="hidden">'); // Dummy input
 		setUrlHiddenInput();
+		$("#error-message").addClass('hide');
 	} else {
 		if ($('#desktop_ground_area .active').length <= 3) {
 			$('#'+locality).addClass('active');
 			$('#all_areas').append('<input type="hidden" value="'+$('#'+locality).text()+'" name="data[Ground][all_area]['+$('#all_areas').children().length+']" id="area_'+locality+'">');
 			setUrlHiddenInput();
 		} else {
-			alert('You can select maximum 4 ground area');
+			$("#error-message").removeClass('hide');
 		}
 	}
 }
+
+$(document).on('click', '.close', function(e) {
+	e.preventDefault();
+	$(this).parent().parent().addClass('hide');
+});
 
 function setUrlHiddenInput() {
 	var all_areas_name = '';
@@ -223,5 +240,31 @@ function searchPost(){
     return true;
 }
 
+$(document).on('change', '#GroundArea', function(e){
+	$('#all_areas').find('input:hidden').val($(this).val());
+	$('#VisitorUrl').val($(this).val());
+});
+
 
 </script>
+
+<style type="text/css">
+.close {
+	float: right;
+	font-weight: bold;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert {
+    /*padding: 15px;*/
+    margin-bottom: 2px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.hide {
+	display: none;
+}
+</style>

@@ -22,7 +22,27 @@ class PaymentGatewayController extends PaymentGatewayAppController {
 		}
 	}
 	
-	public function forward($gateway, $transactionId) {
+	public function forward($gateway, $transactionId, $pay_req = null) {
+
+		$this->loadModel('BookedSlot');
+		
+		if (!empty($pay_req)) {
+			$locked = $this->BookedSlot->find('all', array(
+				'conditions' => array(
+					'BookedSlot.created >= ' => date('Y-m-d H:i:s', strtotime('-20 mins')),
+					'BookedSlot.locked'=>1,
+					'BookedSlot.booking_id' => $transactionId
+				),
+				'recursive' => -1
+			));
+			// echo '<pre>';
+			// print_r(date('Y-m-d H:i:s', strtotime('-20 mins')));
+			// exit;
+
+			if (empty($locked)) { // if locked found then redirect
+				throw new NotFoundException(__("Sorry, url has expired!"));
+			}
+		}
 			
 		$transactionClass = (Configure::read("PaymentGateway.invoiceModel"));
 		$this->loadModel($transactionClass);

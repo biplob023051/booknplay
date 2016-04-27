@@ -468,5 +468,8 @@ class BookingsController extends AppController {
 		if($status == 0){
 			$this->render('failure');
 		}
+		if($status == 2){
+			$this->render('payment_request');
+		}
 	}
 }

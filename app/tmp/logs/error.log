@@ -1828,3 +1828,185 @@ Request URL: /js/jquery.nanoscroller.js.map
 Stack Trace:
 #0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-04-07 21:36:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-07 21:36:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-07 21:38:50 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-07 21:39:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-09 11:28:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/jquery.nanoscroller.js.map
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-09 12:41:05 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-09 12:41:07 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_glass_85_dfeffc_1x400.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-09 12:41:07 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_flat_55_fbec88_40x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-09 12:41:07 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-09 12:41:09 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_glass_75_d0e5f5_1x400.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-09 12:41:11 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-11 14:34:36 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-11 14:34:39 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_glass_85_dfeffc_1x400.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-11 14:34:39 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_flat_55_fbec88_40x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-11 14:34:39 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-11 14:34:40 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_glass_75_d0e5f5_1x400.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-11 14:34:42 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-15 02:07:04 Error: [NotFoundException] Sorry, url has expired!
+Request URL: /payment_gateway/pg/forward/payu/1634
+Stack Trace:
+#0 [internal function]: PaymentGatewayController->forward('payu', '1634')
+#1 D:\www\booknplay\lib\Cake\Controller\Controller.php(500): ReflectionMethod->invokeArgs(Object(PaymentGatewayController), Array)
+#2 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#3 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(PaymentGatewayController), Object(CakeRequest), Object(CakeResponse))
+#4 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-04-17 14:35:47 Error: [MissingControllerException] Controller class AdminpanelController could not be found.
+Exception Attributes: array (
+  'class' => 'AdminpanelController',
+  'plugin' => NULL,
+)
+Request URL: /adminpanel/stylesheets/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+Stack Trace:
+#0 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-04-25 14:29:29 Error: [MissingActionException] Action ApiController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'ApiController',
+  'action' => 'index',
+)
+Request URL: /api
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(203): Controller->invokeAction(Object(CakeRequest))
+#1 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(ApiController), Object(CakeRequest), Object(CakeResponse))
+#2 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

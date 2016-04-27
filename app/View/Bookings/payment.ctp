@@ -47,8 +47,18 @@
 										} ?>
 										
 									</li>
+									
+									<?php  if(AuthComponent::user('id') && ((AuthComponent::user('role') == 'admin') || (AuthComponent::user('role') == 'gowner'))):?>
+										<li>
+											<span>Total Fare:</span> <strong class='price_os'>Rs.<input type="number" name="changed_amount" id="changed_amount" min="1" placeholder="New price" value="<?php echo empty($final_calc['total']) ? 0 : $final_calc['total']; ?>"></strong>
+										</li>
+									<?php else : ?>
+										<li>
+											<span>Total Fare:</span> <strong class='price_os'>Rs.<?php if(!empty($final_calc['total'])){echo $final_calc['total'];}else{echo "0";}?></strong>
+										</li>
+									<?php endif ?>
 									<li>
-										<span>Total Fare:</span> <strong class='price_os'>Rs.<?php if(!empty($final_calc['total'])){echo $final_calc['total'];}else{echo "0";}?></strong>
+										<span>Selected Date:</span> <strong class='price_os'><?php echo $reqData['Ground']['date']; ?></strong>
 									</li>
 								</ul>
 								
@@ -89,8 +99,18 @@
 							
 								<?php } ?>
 							<div class="form-element submit">
-								<input type="hidden" name="submitted" id="submitted" value="true" />
-								<input type="submit" value="Proceed to Payment">
+								<?php  if(AuthComponent::user('id') && ((AuthComponent::user('role') == 'admin') || (AuthComponent::user('role') == 'gowner'))):?>
+									<div class="left width-50">
+										<input type="hidden" name="submitted" id="submitted" value="true" />
+										<input type="submit" class="inline-button" value="Proceed to Payment">
+									</div>
+									<div class="left width-50">
+										<input type="submit" class="inline-button" name="request_payment" value="Request Payment">
+									</div>
+								<?php else : ?>
+									<input type="hidden" name="submitted" id="submitted" value="true" />
+									<input type="submit" value="Proceed to Payment">
+								<?php endif; ?>
 							</div>
 						</form>
 						<div class="clear"></div>
@@ -123,3 +143,33 @@ function processArr(array){
 	return r;
 }
 </script>
+
+<style type="text/css">
+	#changed_amount {
+	    width: 100px;
+	    height: 30px;
+	    text-align: left;
+	    margin-left: 5px;
+	    padding-left: 5px;
+	}
+	.width-50 {
+		width: 48%;
+		margin: 0 1%;
+	}
+
+	/*.form-element input[type="submit"]*/
+	.form-element .width-50 input[type="submit"] {
+	    background: #f59f48;
+	    border-radius: 4px;
+	    color: #ffffff;
+	    border: 1px solid #db8f43;
+	    min-width: 100px;
+	    height: 40px;
+	    line-height: 36px;
+	    display: inline-block;
+	    text-align: center;
+	    font-size: 14px;
+	    text-transform: capitalize;
+	    box-shadow: 0 -2px 0 #db8f43 inset;
+	}
+</style>
