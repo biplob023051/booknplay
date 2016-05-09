@@ -25,6 +25,7 @@
     <meta name="keywords" content="Book And Play" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta name="google-signin-client_id" content="806270021281-0qa3los30bp12oep07sf61b7ks5qn3in.apps.googleusercontent.com"></meta>
     <?php if($this->action == 'search'){?>
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     <?php }else{?>

@@ -2010,3 +2010,48 @@ Stack Trace:
 #1 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(ApiController), Object(CakeRequest), Object(CakeResponse))
 #2 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2016-05-08 20:21:32 Error: [MissingViewException] View file "D:\www\booknplay\app\View\Coupons\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'D:\\www\\booknplay\\app\\View\\Coupons\\index.ctp',
+)
+Request URL: /coupons
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\View\View.php(496): View->_getViewFileName(NULL)
+#1 D:\www\booknplay\lib\Cake\Controller\Controller.php(1005): View->render(NULL, NULL)
+#2 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(210): Controller->render()
+#3 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(CouponsController), Object(CakeRequest), Object(CakeResponse))
+#4 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-05-08 20:22:20 Error: Fatal Error (1): Call to a member function find() on null in [D:\www\booknplay\app\Controller\CouponsController.php, line 49]
+2016-05-08 20:22:20 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /coupons/add
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Error\ErrorHandler.php(185): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\www\\booknpla...', 49)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\www\\booknpla...', 49, Array)
+#2 D:\www\booknplay\lib\Cake\Core\App.php(1034): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\www\\booknpla...', 49, Array)
+#3 D:\www\booknplay\lib\Cake\Core\App.php(1007): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-05-08 21:15:52 Error: Fatal Error (1): Call to a member function find() on null in [D:\www\booknplay\app\Controller\CouponsController.php, line 78]
+2016-05-08 21:15:52 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /coupons/edit/1
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Error\ErrorHandler.php(185): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'D:\\www\\booknpla...', 78)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'D:\\www\\booknpla...', 78, Array)
+#2 D:\www\booknplay\lib\Cake\Core\App.php(1034): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'D:\\www\\booknpla...', 78, Array)
+#3 D:\www\booknplay\lib\Cake\Core\App.php(1007): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-05-08 21:30:59 Error: [BadRequestException] The request has been black-holed
+Request URL: /coupons/add
+Stack Trace:
+#0 D:\www\booknplay\lib\Cake\Controller\Component\SecurityComponent.php(250): SecurityComponent->blackHole(Object(CouponsController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(CouponsController))
+#2 D:\www\booknplay\lib\Cake\Utility\ObjectCollection.php(145): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 D:\www\booknplay\lib\Cake\Event\CakeEventManager.php(280): call_user_func(Array, Object(CakeEvent))
+#5 D:\www\booknplay\lib\Cake\Controller\Controller.php(691): CakeEventManager->dispatch(Object(CakeEvent))
+#6 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(200): Controller->startupProcess()
+#7 D:\www\booknplay\lib\Cake\Routing\Dispatcher.php(175): Dispatcher->_invoke(Object(CouponsController), Object(CakeRequest), Object(CakeResponse))
+#8 D:\www\booknplay\app\webroot\index.php(105): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
